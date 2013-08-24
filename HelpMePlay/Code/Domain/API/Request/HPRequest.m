@@ -14,18 +14,19 @@
 
 @property (nonatomic, strong) NSURL *URL;
 @property (nonatomic, strong) NSMutableURLRequest *req;
+@property (nonatomic, strong) NSDictionary *body;
 
 @end
 
 
 @implementation HPRequest
 
-- (id)initWithURL:(NSURL *)itemURL
+- (id)initWithURL:(NSString *)itemURL
 {
     NSParameterAssert(itemURL);
     self = [super init];
     if (self != nil) {
-        self.URL = itemURL;
+        self.URL = [NSURL URLWithString:itemURL];
     }
     return self;
 }
@@ -42,6 +43,11 @@
 
 #pragma mark -
 #pragma mark Request Management
+
+- (void)addBody:(NSDictionary *)body
+{
+    self.body = body;
+}
 
 - (void)start
 {
@@ -60,11 +66,19 @@
 {
     NSMutableURLRequest *urlRequest = self.req;
     if (!urlRequest) {
-        urlRequest = [[NSMutableURLRequest alloc] initWithURL:self.URL];
-        urlRequest.HTTPMethod = (self.HTTPMethod && self.HTTPMethod.length) ? self.HTTPMethod : @"GET";
+        
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:APIUrls.baseURL]];
+        urlRequest = [httpClient requestWithMethod:[self currentHTTPMethod]
+                                              path:nil
+                                        parameters:self.body];
         urlRequest.timeoutInterval = 60/*sec*/ *2; // 2 minutes
     }
     return urlRequest;
+}
+
+- (NSString *)currentHTTPMethod
+{
+    return (self.HTTPMethod && self.HTTPMethod.length) ? self.HTTPMethod : @"GET";
 }
 
 
@@ -74,13 +88,16 @@
 - (AFSuccessBlock)defaultSuccessBlock
 {
     return ^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"status code %d",[operation.response statusCode]);
+        
         id responseDictionary = [operation.responseString objectFromJSONString];
         
         if(self.successBlock) {
             self.successBlock(operation, responseDictionary);
         }
         else {
-            NSLog(@"downlaoded successfuly with response: %@", responseDictionary);
+            NSLog(@"downlaoded successfuly with response: %@", operation.responseString);
         }
     };
 }

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import "HPAPIDefines.h"
 
 typedef void (^AFSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject);
 typedef void (^AFFailureBlock)(AFHTTPRequestOperation *operation, NSError *error);
@@ -15,8 +16,10 @@ typedef void (^AFFailureBlock)(AFHTTPRequestOperation *operation, NSError *error
 
 @interface HPRequest : NSObject
 
-- (id)initWithURL:(NSURL *)itemURL;
+- (id)initWithURL:(NSString *)itemURL;
 - (id)initWithRequest:(NSMutableURLRequest *)request;
+
+- (void)addBody:(NSDictionary *)body;
 - (void)start;
 
 @property (nonatomic, strong) NSString *HTTPMethod;

@@ -30,27 +30,25 @@ const struct RequestMethods RequestMethods = {
 #pragma mark -
 #pragma mark Factory Methods
 
+- (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password
+{
+    HPRequest *request = [[HPRequest alloc] initWithURL:@""];
+    request.HTTPMethod = RequestMethods.post;
+    [request addBody: @{
+     @"method":@"users.set",
+     @"name" :name,
+     @"login":login,
+     @"password":password }];
+    return request;
+}
+
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password
 {
-//    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:MPAPIURLs.baseURL]];
-//    [httpClient setParameterEncoding:AFFormURLParameterEncoding];
-//    NSMutableURLRequest *request = [httpClient requestWithMethod:RequestMethods.post
-//                                                            path:MPAPIURLs.login
-//                                                      parameters:@{@"username":login,
-//                                    @"password":password}];
-//    return [[HPRequest alloc] initWithRequest:request];
     return nil;
 }
 
 - (HPRequest *)logout
 {
-//    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:MPAPIURLs.baseURL]];
-//    [httpClient setParameterEncoding:AFFormURLParameterEncoding];
-//    NSMutableURLRequest *request = [httpClient requestWithMethod:RequestMethods.post
-//                                                            path:MPAPIURLs.logout
-//                                                      parameters:nil];
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-//    return [[HPRequest alloc] initWithRequest:request];
     return nil;
 }
 
