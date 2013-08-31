@@ -24,6 +24,13 @@
 		301454C517D24EB900351CCF /* HPDataBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454C417D24EB900351CCF /* HPDataBaseHelper.m */; };
 		301454C917D2503E00351CCF /* HPDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454C817D2503E00351CCF /* HPDatabase.m */; };
 		301454CE17D2562700351CCF /* HPEntityDeletingObjective.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454CD17D2562700351CCF /* HPEntityDeletingObjective.m */; };
+		301454DA17D2664A00351CCF /* HPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454D817D2664A00351CCF /* HPLoginViewController.m */; };
+		301454DB17D2664A00351CCF /* HPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301454D917D2664A00351CCF /* HPLoginViewController.xib */; };
+		301454DF17D2667A00351CCF /* HPSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454DD17D2667A00351CCF /* HPSignupViewController.m */; };
+		301454E017D2667A00351CCF /* HPSignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301454DE17D2667A00351CCF /* HPSignupViewController.xib */; };
+		301454E617D268F500351CCF /* nouser_female.png in Resources */ = {isa = PBXBuildFile; fileRef = 301454E417D268F500351CCF /* nouser_female.png */; };
+		301454E717D268F500351CCF /* nouser_male.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 301454E517D268F500351CCF /* nouser_male.jpg */; };
+		301454EC17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454EB17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m */; };
 		302CD0D517C9069700561185 /* HelpMePlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0D317C9069700561185 /* HelpMePlay.xcdatamodeld */; };
 		302CD10617C951C000561185 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0DE17C951C000561185 /* Audio.m */; };
 		302CD10717C951C000561185 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0E017C951C000561185 /* Author.m */; };
@@ -58,8 +65,6 @@
 		3057689417C8FDBF00000BAE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689317C8FDBF00000BAE /* icon@2x.png */; };
 		3057689617C8FDC400000BAE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689517C8FDC400000BAE /* icon.png */; };
 		30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C64A5A17D22E860059DF84 /* HPBaseViewController.m */; };
-		30C64A5F17D22EA00059DF84 /* HPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C64A5D17D22EA00059DF84 /* HPLoginViewController.m */; };
-		30C64A6017D22EA00059DF84 /* HPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C64A5E17D22EA00059DF84 /* HPLoginViewController.xib */; };
 		30FAAEE517C9618C00299126 /* HPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE117C9618C00299126 /* HPRequest.m */; };
 		30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE417C9618C00299126 /* HPRequestFactory.m */; };
 		30FAAEEC17C9619A00299126 /* HPAPIDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE917C9619A00299126 /* HPAPIDefines.m */; };
@@ -79,6 +84,16 @@
 		301454D217D2577700351CCF /* HPObjective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPObjective.h; sourceTree = "<group>"; };
 		301454D317D2578900351CCF /* HPObjectiveStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPObjectiveStatic.h; sourceTree = "<group>"; };
 		301454D417D257A500351CCF /* HPTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTransaction.h; sourceTree = "<group>"; };
+		301454D717D2664A00351CCF /* HPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLoginViewController.h; sourceTree = "<group>"; };
+		301454D817D2664A00351CCF /* HPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLoginViewController.m; sourceTree = "<group>"; };
+		301454D917D2664A00351CCF /* HPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPLoginViewController.xib; sourceTree = "<group>"; };
+		301454DC17D2667A00351CCF /* HPSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSignupViewController.h; sourceTree = "<group>"; };
+		301454DD17D2667A00351CCF /* HPSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSignupViewController.m; sourceTree = "<group>"; };
+		301454DE17D2667A00351CCF /* HPSignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSignupViewController.xib; sourceTree = "<group>"; };
+		301454E417D268F500351CCF /* nouser_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nouser_female.png; sourceTree = "<group>"; };
+		301454E517D268F500351CCF /* nouser_male.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nouser_male.jpg; sourceTree = "<group>"; };
+		301454EA17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPNoEmptyFieldsValidatorObjective.h; sourceTree = "<group>"; };
+		301454EB17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPNoEmptyFieldsValidatorObjective.m; sourceTree = "<group>"; };
 		302CD0D417C9069700561185 /* HelpMePlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelpMePlay.xcdatamodel; sourceTree = "<group>"; };
 		302CD0DD17C951C000561185 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		302CD0DE17C951C000561185 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
@@ -138,9 +153,6 @@
 		3057689517C8FDC400000BAE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		30C64A5917D22E860059DF84 /* HPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseViewController.h; sourceTree = "<group>"; };
 		30C64A5A17D22E860059DF84 /* HPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseViewController.m; sourceTree = "<group>"; };
-		30C64A5C17D22EA00059DF84 /* HPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLoginViewController.h; sourceTree = "<group>"; };
-		30C64A5D17D22EA00059DF84 /* HPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLoginViewController.m; sourceTree = "<group>"; };
-		30C64A5E17D22EA00059DF84 /* HPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPLoginViewController.xib; sourceTree = "<group>"; };
 		30FAAEE017C9618C00299126 /* HPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequest.h; sourceTree = "<group>"; };
 		30FAAEE117C9618C00299126 /* HPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRequest.m; sourceTree = "<group>"; };
 		30FAAEE317C9618C00299126 /* HPRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequestFactory.h; sourceTree = "<group>"; };
@@ -200,6 +212,68 @@
 				301454CD17D2562700351CCF /* HPEntityDeletingObjective.m */,
 			);
 			path = EntityDeleter;
+			sourceTree = "<group>";
+		};
+		301454D517D2661B00351CCF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				301454D717D2664A00351CCF /* HPLoginViewController.h */,
+				301454D817D2664A00351CCF /* HPLoginViewController.m */,
+				301454D917D2664A00351CCF /* HPLoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		301454D617D2661B00351CCF /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				301454DC17D2667A00351CCF /* HPSignupViewController.h */,
+				301454DD17D2667A00351CCF /* HPSignupViewController.m */,
+				301454DE17D2667A00351CCF /* HPSignupViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		301454E117D268F500351CCF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				301454E217D268F500351CCF /* Icons */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		301454E217D268F500351CCF /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				301454E317D268F500351CCF /* noUserPic */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		301454E317D268F500351CCF /* noUserPic */ = {
+			isa = PBXGroup;
+			children = (
+				301454E417D268F500351CCF /* nouser_female.png */,
+				301454E517D268F500351CCF /* nouser_male.jpg */,
+			);
+			path = noUserPic;
+			sourceTree = "<group>";
+		};
+		301454E817D26CF000351CCF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				301454E917D26D1B00351CCF /* NoEmptyFieldsValidator */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		301454E917D26D1B00351CCF /* NoEmptyFieldsValidator */ = {
+			isa = PBXGroup;
+			children = (
+				301454EA17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.h */,
+				301454EB17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m */,
+			);
+			path = NoEmptyFieldsValidator;
 			sourceTree = "<group>";
 		};
 		302CD0EB17C951C000561185 /* RawModels */ = {
@@ -267,6 +341,7 @@
 				3057688317C8F23100000BAE /* Code */,
 				3057687217C8F1C000000BAE /* HPAppDelegate.h */,
 				3057687317C8F1C000000BAE /* HPAppDelegate.m */,
+				301454E117D268F500351CCF /* Resources */,
 				3057686A17C8F1C000000BAE /* Supporting Files */,
 			);
 			path = HelpMePlay;
@@ -410,6 +485,7 @@
 			children = (
 				301454CA17D2562700351CCF /* DataLayer */,
 				3057688F17C8F23100000BAE /* ObjectiveProtocols */,
+				301454E817D26CF000351CCF /* Other */,
 				3057689017C8F23100000BAE /* Transactions */,
 				3057689117C8F23100000BAE /* UILevel */,
 			);
@@ -450,9 +526,8 @@
 		30C64A5817D22E570059DF84 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				30C64A5C17D22EA00059DF84 /* HPLoginViewController.h */,
-				30C64A5D17D22EA00059DF84 /* HPLoginViewController.m */,
-				30C64A5E17D22EA00059DF84 /* HPLoginViewController.xib */,
+				301454D517D2661B00351CCF /* Login */,
+				301454D617D2661B00351CCF /* SignUp */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -547,7 +622,10 @@
 				3057687A17C8F1C000000BAE /* Default-568h@2x.png in Resources */,
 				3057689417C8FDBF00000BAE /* icon@2x.png in Resources */,
 				3057689617C8FDC400000BAE /* icon.png in Resources */,
-				30C64A6017D22EA00059DF84 /* HPLoginViewController.xib in Resources */,
+				301454DB17D2664A00351CCF /* HPLoginViewController.xib in Resources */,
+				301454E017D2667A00351CCF /* HPSignupViewController.xib in Resources */,
+				301454E617D268F500351CCF /* nouser_female.png in Resources */,
+				301454E717D268F500351CCF /* nouser_male.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,10 +710,12 @@
 				30FAAEEC17C9619A00299126 /* HPAPIDefines.m in Sources */,
 				30FAAEED17C9619A00299126 /* HPDefines.m in Sources */,
 				30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */,
-				30C64A5F17D22EA00059DF84 /* HPLoginViewController.m in Sources */,
 				301454C517D24EB900351CCF /* HPDataBaseHelper.m in Sources */,
 				301454C917D2503E00351CCF /* HPDatabase.m in Sources */,
 				301454CE17D2562700351CCF /* HPEntityDeletingObjective.m in Sources */,
+				301454DA17D2664A00351CCF /* HPLoginViewController.m in Sources */,
+				301454DF17D2667A00351CCF /* HPSignupViewController.m in Sources */,
+				301454EC17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "HPLoginViewController.h"
 #import "HPRequestFactory.h"
+#import "HPNoEmptyFieldsValidatorObjective.h"
 
 
 @interface HPLoginViewController () <UITextFieldDelegate>
@@ -43,15 +44,11 @@
 
 - (BOOL)isFieldsDataValid
 {
-    BOOL isValid = NO;
-    if(self.loginField.text.length) {
-        if(self.passwordField.text.length) {
-            isValid = YES;
-        }
-    }
-    return isValid;
+    HPNoEmptyFieldsValidatorObjective *validator = [HPNoEmptyFieldsValidatorObjective new];
+    validator.textFields = @[self.loginField, self.passwordField];
+    [validator reach];
+    return validator.checkingResult;
 }
-
 
 
 #pragma mark -

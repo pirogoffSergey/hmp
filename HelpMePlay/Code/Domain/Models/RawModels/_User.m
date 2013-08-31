@@ -4,6 +4,7 @@
 #import "_User.h"
 
 const struct UserAttributes UserAttributes = {
+	.name = @"name",
 	.token = @"token",
 	.uid = @"uid",
 	.userpic = @"userpic",
@@ -50,6 +51,13 @@ const struct UserFetchedProperties UserFetchedProperties = {
 
 	return keyPaths;
 }
+
+
+
+
+@dynamic name;
+
+
 
 
 

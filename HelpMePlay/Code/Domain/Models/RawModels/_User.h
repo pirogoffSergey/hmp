@@ -5,6 +5,7 @@
 
 
 extern const struct UserAttributes {
+	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *token;
 	__unsafe_unretained NSString *uid;
 	__unsafe_unretained NSString *userpic;
@@ -21,6 +22,7 @@ extern const struct UserFetchedProperties {
 
 
 
+
 @class UIImage;
 
 @interface UserID : NSManagedObjectID {}
@@ -31,6 +33,16 @@ extern const struct UserFetchedProperties {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (UserID*)objectID;
+
+
+
+
+
+@property (nonatomic, strong) NSString* name;
+
+
+
+//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -90,6 +102,12 @@ extern const struct UserFetchedProperties {
 @end
 
 @interface _User (CoreDataGeneratedPrimitiveAccessors)
+
+
+- (NSString*)primitiveName;
+- (void)setPrimitiveName:(NSString*)value;
+
+
 
 
 - (NSString*)primitiveToken;

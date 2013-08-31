@@ -8,8 +8,8 @@
 
 #import "HPAppDelegate.h"
 #import "HPRequestFactory.h"
-#import "HPLoginViewController.h"
-
+//#import "HPLoginViewController.h"
+#import "HPSignupViewController.h"
 
 @implementation HPAppDelegate
 
@@ -17,7 +17,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    self.window.rootViewController = [HPLoginViewController new];
+    self.window.rootViewController = [HPSignupViewController new];
     
 //    HPRequest *req = [[HPRequestFactory sharedInstance] createUserWithName:@"nameox" login:@"vasya" password:@"qwerty"];
 //    HPRequest *req = [[HPRequestFactory sharedInstance] sendPic];
