@@ -33,6 +33,8 @@
 		301454EC17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454EB17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m */; };
 		301454F117D277C800351CCF /* HPMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454EF17D277C800351CCF /* HPMainPageViewController.m */; };
 		301454F217D277C800351CCF /* HPMainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301454F017D277C800351CCF /* HPMainPageViewController.xib */; };
+		301454F617D284CB00351CCF /* HPBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454F517D284CB00351CCF /* HPBaseDataSource.m */; };
+		301454FA17D28B1C00351CCF /* HPBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454F917D28B1C00351CCF /* HPBaseListViewController.m */; };
 		302CD0D517C9069700561185 /* HelpMePlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0D317C9069700561185 /* HelpMePlay.xcdatamodeld */; };
 		302CD10617C951C000561185 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0DE17C951C000561185 /* Audio.m */; };
 		302CD10717C951C000561185 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0E017C951C000561185 /* Author.m */; };
@@ -99,6 +101,10 @@
 		301454EE17D277C800351CCF /* HPMainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPMainPageViewController.h; sourceTree = "<group>"; };
 		301454EF17D277C800351CCF /* HPMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPMainPageViewController.m; sourceTree = "<group>"; };
 		301454F017D277C800351CCF /* HPMainPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPMainPageViewController.xib; sourceTree = "<group>"; };
+		301454F417D284CB00351CCF /* HPBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseDataSource.h; sourceTree = "<group>"; };
+		301454F517D284CB00351CCF /* HPBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseDataSource.m; sourceTree = "<group>"; };
+		301454F817D28B1C00351CCF /* HPBaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseListViewController.h; sourceTree = "<group>"; };
+		301454F917D28B1C00351CCF /* HPBaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseListViewController.m; sourceTree = "<group>"; };
 		302CD0D417C9069700561185 /* HelpMePlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelpMePlay.xcdatamodel; sourceTree = "<group>"; };
 		302CD0DD17C951C000561185 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		302CD0DE17C951C000561185 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
@@ -291,6 +297,24 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
+		301454F317D2825C00351CCF /* BaseDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				301454F417D284CB00351CCF /* HPBaseDataSource.h */,
+				301454F517D284CB00351CCF /* HPBaseDataSource.m */,
+			);
+			path = BaseDataSource;
+			sourceTree = "<group>";
+		};
+		301454F717D28A2500351CCF /* BaseList */ = {
+			isa = PBXGroup;
+			children = (
+				301454F817D28B1C00351CCF /* HPBaseListViewController.h */,
+				301454F917D28B1C00351CCF /* HPBaseListViewController.m */,
+			);
+			path = BaseList;
+			sourceTree = "<group>";
+		};
 		302CD0EB17C951C000561185 /* RawModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +450,7 @@
 		3057688817C8F23100000BAE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				301454F717D28A2500351CCF /* BaseList */,
 				30C64A5917D22E860059DF84 /* HPBaseViewController.h */,
 				30C64A5A17D22E860059DF84 /* HPBaseViewController.m */,
 			);
@@ -435,8 +460,8 @@
 		3057688917C8F23100000BAE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				301454C617D2502500351CCF /* Database */,
 				3057688A17C8F23100000BAE /* API */,
+				301454C617D2502500351CCF /* Database */,
 				3057688B17C8F23100000BAE /* DataSources */,
 				3057688C17C8F23100000BAE /* Mappers */,
 				3057688D17C8F23100000BAE /* Models */,
@@ -456,6 +481,7 @@
 		3057688B17C8F23100000BAE /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				301454F317D2825C00351CCF /* BaseDataSource */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -734,6 +760,8 @@
 				301454DF17D2667A00351CCF /* HPSignupViewController.m in Sources */,
 				301454EC17D26D3700351CCF /* HPNoEmptyFieldsValidatorObjective.m in Sources */,
 				301454F117D277C800351CCF /* HPMainPageViewController.m in Sources */,
+				301454F617D284CB00351CCF /* HPBaseDataSource.m in Sources */,
+				301454FA17D28B1C00351CCF /* HPBaseListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

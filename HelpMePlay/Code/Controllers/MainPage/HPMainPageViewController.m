@@ -28,6 +28,15 @@
 
 
 #pragma mark -
+#pragma mark Setupers
+
+- (void)setupSettingsButton
+{
+    
+}
+
+
+#pragma mark -
 #pragma mark Actions
 
 - (IBAction)authorsTapped:(id)sender
