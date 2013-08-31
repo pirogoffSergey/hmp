@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "HPObjective.h"
 
-@interface VTEntityDeletingObjective : NSObject <HPObjective>
+@interface HPEntityDeletingObjective : NSObject <HPObjective>
 
 @property (nonatomic, strong) NSManagedObject *entity;
 @property (nonatomic, strong) NSManagedObjectContext *context;

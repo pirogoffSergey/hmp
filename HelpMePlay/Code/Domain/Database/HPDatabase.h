@@ -12,5 +12,6 @@
 @interface HPDatabase : NSObject
 
 + (User *)currentUser;
++ (void)restoreCurrentUser;
 
 @end

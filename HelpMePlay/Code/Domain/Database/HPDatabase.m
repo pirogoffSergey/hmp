@@ -8,6 +8,7 @@
 
 #import "HPDatabase.h"
 #import "HPDataBaseHelper.h"
+#import "HPEntityDeletingObjective.h"
 
 
 @implementation HPDatabase
@@ -28,6 +29,18 @@
         return nil;
     }
 }
+
++ (void)restoreCurrentUser
+{
+    HPEntityDeletingObjective *entityDeleter = [HPEntityDeletingObjective new];
+    User *user = [HPDatabase currentUser];
+    if(user) {
+        entityDeleter.entity = user;
+        [entityDeleter reach];
+    }
+}
+
+
 
 + (NSArray *)songs
 {

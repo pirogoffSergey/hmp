@@ -8,6 +8,7 @@
 
 #import "HPRequestFactory.h"
 #import "User.h"
+#import "HPDatabase.h"
 
 const struct RequestMethods RequestMethods = {
     .get = @"GET",
@@ -58,7 +59,7 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)logout
 {
-    // just localy clear token here
+    [HPDatabase restoreCurrentUser];
     return nil;
 }
 

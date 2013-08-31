@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 111 Minutes. All rights reserved.
 //
 
-#import "VTEntityDeletingObjective.h"
+#import "HPEntityDeletingObjective.h"
 #import "HPDataBaseHelper.h"
 
 
-@implementation VTEntityDeletingObjective
+@implementation HPEntityDeletingObjective
 
 - (void)reach
 {
