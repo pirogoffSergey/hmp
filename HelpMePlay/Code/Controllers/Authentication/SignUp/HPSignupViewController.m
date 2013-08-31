@@ -8,15 +8,18 @@
 
 #import "HPSignupViewController.h"
 #import "HPNoEmptyFieldsValidatorObjective.h"
+#import "FDTakeController.h"
 
 
-@interface HPSignupViewController () <UITextFieldDelegate>
+@interface HPSignupViewController () <UITextFieldDelegate, FDTakeDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *userpicButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *loginField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+
+@property (nonatomic, strong) FDTakeController *takePhotoController;
 
 @end
 
@@ -43,6 +46,26 @@
 
 
 #pragma mark -
+#pragma mark Actions
+
+- (IBAction)changePhotoPressed:(id)sender
+{
+    if(!self.takePhotoController) {
+        self.takePhotoController = [FDTakeController new];
+        self.takePhotoController.delegate = self;
+    }
+    [self.takePhotoController takePhotoOrChooseFromLibrary];
+}
+
+- (IBAction)createUserTapped:(id)sender
+{
+    if([self isFieldsDataValid]) {
+        //send request
+    }
+}
+
+
+#pragma mark -
 #pragma mark UITextFieldDelegate
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -58,13 +81,11 @@
 
 
 #pragma mark -
-#pragma mark Actions
+#pragma mark FDTakeDelegate
 
-- (IBAction)createUserTapped:(id)sender
+- (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info;
 {
-    if([self isFieldsDataValid]) {
-        //send request
-    }
+    [self.userpicButton setImage:photo forState:UIControlStateNormal];
 }
 
 
