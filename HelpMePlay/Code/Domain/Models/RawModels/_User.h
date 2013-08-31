@@ -6,6 +6,7 @@
 
 extern const struct UserAttributes {
 	__unsafe_unretained NSString *token;
+	__unsafe_unretained NSString *uid;
 	__unsafe_unretained NSString *userpic;
 } UserAttributes;
 
@@ -17,6 +18,7 @@ extern const struct UserFetchedProperties {
 } UserFetchedProperties;
 
 @class Playlist;
+
 
 
 @class UIImage;
@@ -39,6 +41,20 @@ extern const struct UserFetchedProperties {
 
 
 //- (BOOL)validateToken:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* uid;
+
+
+
+@property int32_t uidValue;
+- (int32_t)uidValue;
+- (void)setUidValue:(int32_t)value_;
+
+//- (BOOL)validateUid:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -78,6 +94,15 @@ extern const struct UserFetchedProperties {
 
 - (NSString*)primitiveToken;
 - (void)setPrimitiveToken:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitiveUid;
+- (void)setPrimitiveUid:(NSNumber*)value;
+
+- (int32_t)primitiveUidValue;
+- (void)setPrimitiveUidValue:(int32_t)value_;
 
 
 

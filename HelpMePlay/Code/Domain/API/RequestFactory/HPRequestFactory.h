@@ -24,4 +24,7 @@ extern const struct RequestMethods {
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password;
 - (HPRequest *)logout;
 
+
+- (HPRequest *)sendPic;
+
 @end

@@ -21,6 +21,12 @@
 
 @implementation HPRequest
 
+- (id)init
+{
+    self = [self initWithURL:@""];
+    return self;
+}
+
 - (id)initWithURL:(NSString *)itemURL
 {
     NSParameterAssert(itemURL);
@@ -90,7 +96,6 @@
     return ^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"status code %d",[operation.response statusCode]);
-        
         id responseDictionary = [operation.responseString objectFromJSONString];
         
         if(self.successBlock) {
@@ -110,6 +115,7 @@
             self.failureBlock(operation, error);
         }
         else {
+            NSLog(@"status code %d",[operation.response statusCode]);
             NSLog(@"----------------\nfailure : %@\n\n", error);
         }
     };

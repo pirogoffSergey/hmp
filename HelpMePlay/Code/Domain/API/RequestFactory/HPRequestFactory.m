@@ -7,6 +7,7 @@
 //
 
 #import "HPRequestFactory.h"
+#import "User.h"
 
 const struct RequestMethods RequestMethods = {
     .get = @"GET",
@@ -32,24 +33,47 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password
 {
-    HPRequest *request = [[HPRequest alloc] initWithURL:@""];
+    HPRequest *request = [HPRequest new];
     request.HTTPMethod = RequestMethods.post;
     [request addBody: @{
-     @"method":@"users.set",
-     @"name" :name,
-     @"login":login,
-     @"password":password }];
+         @"method": APIGroups.usersSet,
+         @"name" :name,
+         @"login":login,
+         @"password":password
+     }];
     return request;
 }
 
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password
 {
-    return nil;
+    HPRequest *request = [HPRequest new];
+    request.HTTPMethod = RequestMethods.post;
+    [request addBody: @{
+         @"method"  : APIGroups.usersAuth,
+         @"login"   :login,
+         @"password":password
+     }];
+    return request;
 }
 
 - (HPRequest *)logout
 {
+    // just localy clear token here
     return nil;
+}
+
+- (HPRequest *)sendPic
+{
+    HPRequest *request = [HPRequest new];
+    request.HTTPMethod = RequestMethods.post;
+    
+    UIImage *image = [UIImage imageNamed:@"icon"];
+    NSData *dataObj = UIImageJPEGRepresentation(image, 1.0);
+    
+    [request addBody: @{
+     @"method":@"users.test",
+     @"img":dataObj }];
+    return request;
 }
 
 

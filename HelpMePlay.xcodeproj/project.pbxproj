@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		301454C517D24EB900351CCF /* HPDataBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454C417D24EB900351CCF /* HPDataBaseHelper.m */; };
+		301454C917D2503E00351CCF /* HPDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454C817D2503E00351CCF /* HPDatabase.m */; };
+		301454CE17D2562700351CCF /* VTEntityDeletingObjective.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454CD17D2562700351CCF /* VTEntityDeletingObjective.m */; };
 		302CD0D517C9069700561185 /* HelpMePlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0D317C9069700561185 /* HelpMePlay.xcdatamodeld */; };
 		302CD10617C951C000561185 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0DE17C951C000561185 /* Audio.m */; };
 		302CD10717C951C000561185 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0E017C951C000561185 /* Author.m */; };
@@ -54,6 +57,9 @@
 		3057687A17C8F1C000000BAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057687917C8F1C000000BAE /* Default-568h@2x.png */; };
 		3057689417C8FDBF00000BAE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689317C8FDBF00000BAE /* icon@2x.png */; };
 		3057689617C8FDC400000BAE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689517C8FDC400000BAE /* icon.png */; };
+		30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C64A5A17D22E860059DF84 /* HPBaseViewController.m */; };
+		30C64A5F17D22EA00059DF84 /* HPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C64A5D17D22EA00059DF84 /* HPLoginViewController.m */; };
+		30C64A6017D22EA00059DF84 /* HPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30C64A5E17D22EA00059DF84 /* HPLoginViewController.xib */; };
 		30FAAEE517C9618C00299126 /* HPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE117C9618C00299126 /* HPRequest.m */; };
 		30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE417C9618C00299126 /* HPRequestFactory.m */; };
 		30FAAEEC17C9619A00299126 /* HPAPIDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE917C9619A00299126 /* HPAPIDefines.m */; };
@@ -64,6 +70,15 @@
 /* Begin PBXFileReference section */
 		0AA826352A8B4D7D9CF357E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A9BAAEB9D409CB28C4D1B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		301454C317D24EB900351CCF /* HPDataBaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDataBaseHelper.h; sourceTree = "<group>"; };
+		301454C417D24EB900351CCF /* HPDataBaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDataBaseHelper.m; sourceTree = "<group>"; };
+		301454C717D2503E00351CCF /* HPDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDatabase.h; sourceTree = "<group>"; };
+		301454C817D2503E00351CCF /* HPDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDatabase.m; sourceTree = "<group>"; };
+		301454CC17D2562700351CCF /* VTEntityDeletingObjective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTEntityDeletingObjective.h; sourceTree = "<group>"; };
+		301454CD17D2562700351CCF /* VTEntityDeletingObjective.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTEntityDeletingObjective.m; sourceTree = "<group>"; };
+		301454D217D2577700351CCF /* HPObjective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPObjective.h; sourceTree = "<group>"; };
+		301454D317D2578900351CCF /* HPObjectiveStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPObjectiveStatic.h; sourceTree = "<group>"; };
+		301454D417D257A500351CCF /* HPTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTransaction.h; sourceTree = "<group>"; };
 		302CD0D417C9069700561185 /* HelpMePlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelpMePlay.xcdatamodel; sourceTree = "<group>"; };
 		302CD0DD17C951C000561185 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		302CD0DE17C951C000561185 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
@@ -121,6 +136,11 @@
 		3057687917C8F1C000000BAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3057689317C8FDBF00000BAE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		3057689517C8FDC400000BAE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		30C64A5917D22E860059DF84 /* HPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseViewController.h; sourceTree = "<group>"; };
+		30C64A5A17D22E860059DF84 /* HPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseViewController.m; sourceTree = "<group>"; };
+		30C64A5C17D22EA00059DF84 /* HPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLoginViewController.h; sourceTree = "<group>"; };
+		30C64A5D17D22EA00059DF84 /* HPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLoginViewController.m; sourceTree = "<group>"; };
+		30C64A5E17D22EA00059DF84 /* HPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPLoginViewController.xib; sourceTree = "<group>"; };
 		30FAAEE017C9618C00299126 /* HPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequest.h; sourceTree = "<group>"; };
 		30FAAEE117C9618C00299126 /* HPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRequest.m; sourceTree = "<group>"; };
 		30FAAEE317C9618C00299126 /* HPRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequestFactory.h; sourceTree = "<group>"; };
@@ -147,6 +167,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301454C217D24EA400351CCF /* DataBaseHelper */ = {
+			isa = PBXGroup;
+			children = (
+				301454C317D24EB900351CCF /* HPDataBaseHelper.h */,
+				301454C417D24EB900351CCF /* HPDataBaseHelper.m */,
+			);
+			path = DataBaseHelper;
+			sourceTree = "<group>";
+		};
+		301454C617D2502500351CCF /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				301454C717D2503E00351CCF /* HPDatabase.h */,
+				301454C817D2503E00351CCF /* HPDatabase.m */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		301454CA17D2562700351CCF /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				301454CB17D2562700351CCF /* EntityDeleter */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		301454CB17D2562700351CCF /* EntityDeleter */ = {
+			isa = PBXGroup;
+			children = (
+				301454CC17D2562700351CCF /* VTEntityDeletingObjective.h */,
+				301454CD17D2562700351CCF /* VTEntityDeletingObjective.m */,
+			);
+			path = EntityDeleter;
+			sourceTree = "<group>";
+		};
 		302CD0EB17C951C000561185 /* RawModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +311,7 @@
 		3057688517C8F23100000BAE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				301454C217D24EA400351CCF /* DataBaseHelper */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -270,6 +326,7 @@
 		3057688717C8F23100000BAE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				30C64A5817D22E570059DF84 /* Authentication */,
 				3057688817C8F23100000BAE /* Base */,
 			);
 			path = Controllers;
@@ -278,6 +335,8 @@
 		3057688817C8F23100000BAE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				30C64A5917D22E860059DF84 /* HPBaseViewController.h */,
+				30C64A5A17D22E860059DF84 /* HPBaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -285,6 +344,7 @@
 		3057688917C8F23100000BAE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				301454C617D2502500351CCF /* Database */,
 				3057688A17C8F23100000BAE /* API */,
 				3057688B17C8F23100000BAE /* DataSources */,
 				3057688C17C8F23100000BAE /* Mappers */,
@@ -348,6 +408,7 @@
 		3057688E17C8F23100000BAE /* Objectives */ = {
 			isa = PBXGroup;
 			children = (
+				301454CA17D2562700351CCF /* DataLayer */,
 				3057688F17C8F23100000BAE /* ObjectiveProtocols */,
 				3057689017C8F23100000BAE /* Transactions */,
 				3057689117C8F23100000BAE /* UILevel */,
@@ -358,6 +419,9 @@
 		3057688F17C8F23100000BAE /* ObjectiveProtocols */ = {
 			isa = PBXGroup;
 			children = (
+				301454D217D2577700351CCF /* HPObjective.h */,
+				301454D317D2578900351CCF /* HPObjectiveStatic.h */,
+				301454D417D257A500351CCF /* HPTransaction.h */,
 			);
 			path = ObjectiveProtocols;
 			sourceTree = "<group>";
@@ -381,6 +445,16 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		30C64A5817D22E570059DF84 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				30C64A5C17D22EA00059DF84 /* HPLoginViewController.h */,
+				30C64A5D17D22EA00059DF84 /* HPLoginViewController.m */,
+				30C64A5E17D22EA00059DF84 /* HPLoginViewController.xib */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		30FAAEDF17C9618C00299126 /* Request */ = {
@@ -473,6 +547,7 @@
 				3057687A17C8F1C000000BAE /* Default-568h@2x.png in Resources */,
 				3057689417C8FDBF00000BAE /* icon@2x.png in Resources */,
 				3057689617C8FDC400000BAE /* icon.png in Resources */,
+				30C64A6017D22EA00059DF84 /* HPLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +631,11 @@
 				30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */,
 				30FAAEEC17C9619A00299126 /* HPAPIDefines.m in Sources */,
 				30FAAEED17C9619A00299126 /* HPDefines.m in Sources */,
+				30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */,
+				30C64A5F17D22EA00059DF84 /* HPLoginViewController.m in Sources */,
+				301454C517D24EB900351CCF /* HPDataBaseHelper.m in Sources */,
+				301454C917D2503E00351CCF /* HPDatabase.m in Sources */,
+				301454CE17D2562700351CCF /* VTEntityDeletingObjective.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

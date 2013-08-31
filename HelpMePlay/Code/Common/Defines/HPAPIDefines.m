@@ -11,3 +11,11 @@
 const struct APIUrls APIUrls = {
     .baseURL = @"http://viodev.bget.ru",
 };
+
+
+const struct APIGroups APIGroups = {
+    .usersSet = @"users.set",
+    .usersGet = @"users.get",
+    .usersAuth = @"users.auth",
+    .usersIsLogged = @"users.isLogged",
+};

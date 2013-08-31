@@ -11,3 +11,11 @@
 extern const struct APIUrls {
     __unsafe_unretained NSString *baseURL;
 } APIUrls;
+
+
+extern const struct APIGroups {
+    __unsafe_unretained NSString *usersSet;
+    __unsafe_unretained NSString *usersGet;
+    __unsafe_unretained NSString *usersAuth;
+    __unsafe_unretained NSString *usersIsLogged;
+} APIGroups;
