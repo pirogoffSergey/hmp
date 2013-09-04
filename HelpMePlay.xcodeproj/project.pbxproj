@@ -73,6 +73,8 @@
 		30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE417C9618C00299126 /* HPRequestFactory.m */; };
 		30FAAEEC17C9619A00299126 /* HPAPIDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE917C9619A00299126 /* HPAPIDefines.m */; };
 		30FAAEED17C9619A00299126 /* HPDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEEB17C9619A00299126 /* HPDefines.m */; };
+		30FD249E17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FD249D17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m */; };
+		30FD24A317D7E7D4006894A5 /* HPBaseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FD24A217D7E7D4006894A5 /* HPBaseMapper.m */; };
 		4523485259A64D2AB4CE6BC8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA826352A8B4D7D9CF357E4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +174,12 @@
 		30FAAEE917C9619A00299126 /* HPAPIDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAPIDefines.m; sourceTree = "<group>"; };
 		30FAAEEA17C9619A00299126 /* HPDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDefines.h; sourceTree = "<group>"; };
 		30FAAEEB17C9619A00299126 /* HPDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDefines.m; sourceTree = "<group>"; };
+		30FD249C17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ProtectedValueForKey.h"; sourceTree = "<group>"; };
+		30FD249D17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ProtectedValueForKey.m"; sourceTree = "<group>"; };
+		30FD249F17D7E7A1006894A5 /* HPMapperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPMapperProtocol.h; sourceTree = "<group>"; };
+		30FD24A117D7E7D4006894A5 /* HPBaseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseMapper.h; sourceTree = "<group>"; };
+		30FD24A217D7E7D4006894A5 /* HPBaseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseMapper.m; sourceTree = "<group>"; };
+		30FD24A417D7E958006894A5 /* HPMappingObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPMappingObjectProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +423,7 @@
 		3057688417C8F23100000BAE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				30FD249A17D7E6DC006894A5 /* Categories */,
 				30FAAEE717C9619A00299126 /* Defines */,
 				3057688517C8F23100000BAE /* Helpers */,
 				3057688617C8F23100000BAE /* Palette */,
@@ -489,6 +498,9 @@
 		3057688C17C8F23100000BAE /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				30FD24A017D7E7BE006894A5 /* BaseMapper */,
+				30FD249F17D7E7A1006894A5 /* HPMapperProtocol.h */,
+				30FD24A417D7E958006894A5 /* HPMappingObjectProtocol.h */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -601,6 +613,32 @@
 				30FAAEEB17C9619A00299126 /* HPDefines.m */,
 			);
 			path = Defines;
+			sourceTree = "<group>";
+		};
+		30FD249A17D7E6DC006894A5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				30FD249B17D7E70E006894A5 /* Dictionary+ProtectedVfK */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		30FD249B17D7E70E006894A5 /* Dictionary+ProtectedVfK */ = {
+			isa = PBXGroup;
+			children = (
+				30FD249C17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.h */,
+				30FD249D17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m */,
+			);
+			path = "Dictionary+ProtectedVfK";
+			sourceTree = "<group>";
+		};
+		30FD24A017D7E7BE006894A5 /* BaseMapper */ = {
+			isa = PBXGroup;
+			children = (
+				30FD24A117D7E7D4006894A5 /* HPBaseMapper.h */,
+				30FD24A217D7E7D4006894A5 /* HPBaseMapper.m */,
+			);
+			path = BaseMapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -762,6 +800,8 @@
 				301454F117D277C800351CCF /* HPMainPageViewController.m in Sources */,
 				301454F617D284CB00351CCF /* HPBaseDataSource.m in Sources */,
 				301454FA17D28B1C00351CCF /* HPBaseListViewController.m in Sources */,
+				30FD249E17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m in Sources */,
+				30FD24A317D7E7D4006894A5 /* HPBaseMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
