@@ -28,7 +28,7 @@
     return YES;
 }
 
-- (UIViewController *)createFirstController
+- (UINavigationController *)createFirstController
 {
     return [[UINavigationController alloc] initWithRootViewController:[HPMainPageViewController new]];
 }

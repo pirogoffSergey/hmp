@@ -9,6 +9,7 @@
 #import "HPLoginViewController.h"
 #import "HPRequestFactory.h"
 #import "HPNoEmptyFieldsValidatorObjective.h"
+#import "HPSignupViewController.h"
 
 
 @interface HPLoginViewController () <UITextFieldDelegate>
@@ -24,6 +25,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupCloseButton];
+}
+
+
+#pragma mark -
+#pragma mark Setupers
+
+- (void)setupCloseButton
+{
+    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc]initWithTitle:@"Close"
+                                                                 style:UIBarButtonItemStyleDone
+                                                                target:self
+                                                                action:@selector(closeButtonPressed:)];
+    self.navigationItem.leftBarButtonItem = closeItem;
 }
 
 
@@ -36,6 +51,16 @@
         HPRequest *req = [[HPRequestFactory sharedInstance] loginWithLogin:self.loginField.text password:self.passwordField.text];
         [req start];
     }
+}
+
+- (IBAction)signUpButtonPressed:(id)sender
+{
+    [self.navigationController pushViewController:[HPSignupViewController new] animated:YES];
+}
+
+- (void)closeButtonPressed:(id)sender
+{
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 

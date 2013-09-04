@@ -53,6 +53,7 @@
     if(!self.takePhotoController) {
         self.takePhotoController = [FDTakeController new];
         self.takePhotoController.delegate = self;
+        self.takePhotoController.viewControllerForPresentingImagePickerController = self;
     }
     [self.takePhotoController takePhotoOrChooseFromLibrary];
 }
@@ -99,6 +100,5 @@
     [validator reach];
     return validator.checkingResult;
 }
-
 
 @end

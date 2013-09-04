@@ -10,4 +10,6 @@
 
 @interface HPLoginViewController : HPBaseViewController
 
+//@property (nonatomic, copy) void (^dismissalHandler)(void);
+
 @end
