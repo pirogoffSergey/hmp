@@ -50,9 +50,20 @@ const struct RequestMethods RequestMethods = {
     HPRequest *request = [HPRequest new];
     request.HTTPMethod = RequestMethods.post;
     [request addBody: @{
-         @"method"  : APIGroups.usersAuth,
+         @"method"  :APIGroups.usersAuth,
          @"login"   :login,
          @"password":password
+     }];
+    return request;
+}
+
+- (HPRequest *)isLogged:(NSString *)token
+{
+    HPRequest *request = [HPRequest new];
+    request.HTTPMethod = RequestMethods.post;
+    [request addBody: @{
+     @"method"  :APIGroups.usersAuth,
+     @"token"   :token,
      }];
     return request;
 }
@@ -62,6 +73,9 @@ const struct RequestMethods RequestMethods = {
     [HPDatabase restoreCurrentUser];
     return nil;
 }
+
+
+
 
 - (HPRequest *)sendPic
 {

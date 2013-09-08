@@ -110,6 +110,8 @@
         }
         currentUser.token = obj.additionalField;
         currentUser.uid = [NSNumber numberWithInt:obj._id];
+        
+        //after this. need to send "users.get" to get all info about user (pic, name, etc)
     };
     
     return request;
