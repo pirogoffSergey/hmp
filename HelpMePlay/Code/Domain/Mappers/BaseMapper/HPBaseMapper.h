@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "HPMapperProtocol.h"
 #import "HPMappingObjectProtocol.h"
+#import "HPBaseResponseObject.h"
+
 
 @interface HPBaseMapper : NSObject <HPMapperProtocol>
+
+- (id)mapFromData:(id)data withModel:(Class)model;
 
 @end

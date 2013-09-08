@@ -9,6 +9,7 @@
 #import "HPDatabase.h"
 #import "HPDataBaseHelper.h"
 #import "HPEntityDeletingObjective.h"
+#import "HPEntityCreator.h"
 
 
 @implementation HPDatabase
@@ -40,12 +41,21 @@
     }
 }
 
++ (User *)createUser
+{
+    HPEntityCreator *creator = [HPEntityCreator new];
+    creator.entityClass = [User class];
+    [creator reach];
+    
+    return creator.createdEntityObject;
+}
 
 
 + (NSArray *)songs
 {
     return nil;
 }
+
 
 //+ (NSArray *)vendors
 //{

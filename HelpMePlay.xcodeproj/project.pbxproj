@@ -68,6 +68,8 @@
 		3057687A17C8F1C000000BAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057687917C8F1C000000BAE /* Default-568h@2x.png */; };
 		3057689417C8FDBF00000BAE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689317C8FDBF00000BAE /* icon@2x.png */; };
 		3057689617C8FDC400000BAE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689517C8FDC400000BAE /* icon.png */; };
+		30BEDDE517DD0CB6003D2C8E /* HPBaseResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BEDDE417DD0CB6003D2C8E /* HPBaseResponseObject.m */; };
+		30BEDDE917DD1A28003D2C8E /* HPEntityCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BEDDE817DD1A28003D2C8E /* HPEntityCreator.m */; };
 		30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C64A5A17D22E860059DF84 /* HPBaseViewController.m */; };
 		30FAAEE517C9618C00299126 /* HPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE117C9618C00299126 /* HPRequest.m */; };
 		30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE417C9618C00299126 /* HPRequestFactory.m */; };
@@ -164,6 +166,10 @@
 		3057687917C8F1C000000BAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3057689317C8FDBF00000BAE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		3057689517C8FDC400000BAE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		30BEDDE317DD0CB6003D2C8E /* HPBaseResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseResponseObject.h; sourceTree = "<group>"; };
+		30BEDDE417DD0CB6003D2C8E /* HPBaseResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseResponseObject.m; sourceTree = "<group>"; };
+		30BEDDE717DD1A28003D2C8E /* HPEntityCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPEntityCreator.h; sourceTree = "<group>"; };
+		30BEDDE817DD1A28003D2C8E /* HPEntityCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPEntityCreator.m; sourceTree = "<group>"; };
 		30C64A5917D22E860059DF84 /* HPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseViewController.h; sourceTree = "<group>"; };
 		30C64A5A17D22E860059DF84 /* HPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseViewController.m; sourceTree = "<group>"; };
 		30FAAEE017C9618C00299126 /* HPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequest.h; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 		301454CA17D2562700351CCF /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				30BEDDE617DD1A1C003D2C8E /* EntityCreator */,
 				301454CB17D2562700351CCF /* EntityDeleter */,
 			);
 			path = DataLayer;
@@ -508,6 +515,7 @@
 		3057688D17C8F23100000BAE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				30BEDDE117DD0C51003D2C8E /* NonStorageObjects */,
 				302CD0DD17C951C000561185 /* Audio.h */,
 				302CD0DE17C951C000561185 /* Audio.m */,
 				302CD0DF17C951C000561185 /* Author.h */,
@@ -575,6 +583,32 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		30BEDDE117DD0C51003D2C8E /* NonStorageObjects */ = {
+			isa = PBXGroup;
+			children = (
+				30BEDDE217DD0CA0003D2C8E /* BaseResponseObject */,
+			);
+			path = NonStorageObjects;
+			sourceTree = "<group>";
+		};
+		30BEDDE217DD0CA0003D2C8E /* BaseResponseObject */ = {
+			isa = PBXGroup;
+			children = (
+				30BEDDE317DD0CB6003D2C8E /* HPBaseResponseObject.h */,
+				30BEDDE417DD0CB6003D2C8E /* HPBaseResponseObject.m */,
+			);
+			path = BaseResponseObject;
+			sourceTree = "<group>";
+		};
+		30BEDDE617DD1A1C003D2C8E /* EntityCreator */ = {
+			isa = PBXGroup;
+			children = (
+				30BEDDE717DD1A28003D2C8E /* HPEntityCreator.h */,
+				30BEDDE817DD1A28003D2C8E /* HPEntityCreator.m */,
+			);
+			path = EntityCreator;
 			sourceTree = "<group>";
 		};
 		30C64A5817D22E570059DF84 /* Authentication */ = {
@@ -802,6 +836,8 @@
 				301454FA17D28B1C00351CCF /* HPBaseListViewController.m in Sources */,
 				30FD249E17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m in Sources */,
 				30FD24A317D7E7D4006894A5 /* HPBaseMapper.m in Sources */,
+				30BEDDE517DD0CB6003D2C8E /* HPBaseResponseObject.m in Sources */,
+				30BEDDE917DD1A28003D2C8E /* HPEntityCreator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

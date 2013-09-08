@@ -16,13 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
     self.window.rootViewController = [self createFirstController];
-    
-//    HPRequest *req = [[HPRequestFactory sharedInstance] createUserWithName:@"nameox" login:@"vasya" password:@"qwerty"];
-//    HPRequest *req = [[HPRequestFactory sharedInstance] sendPic];
-//    [req start];
-    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

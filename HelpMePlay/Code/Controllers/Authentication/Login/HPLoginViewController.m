@@ -10,6 +10,7 @@
 #import "HPRequestFactory.h"
 #import "HPNoEmptyFieldsValidatorObjective.h"
 #import "HPSignupViewController.h"
+#import "HPBaseMapper.h"
 
 
 @interface HPLoginViewController () <UITextFieldDelegate>
@@ -48,7 +49,7 @@
 - (IBAction)loginButtonPressed:(id)sender
 {
     if([self isFieldsDataValid]) {
-        HPRequest *req = [[HPRequestFactory sharedInstance] loginWithLogin:self.loginField.text password:self.passwordField.text];
+        HPRequest *req = [self loginRequest];
         [req start];
     }
 }
@@ -89,5 +90,30 @@
     RESIGN_ALL;
     return YES;
 }
+
+
+#pragma mark -
+#pragma mark Helpers
+
+- (HPRequest *)loginRequest
+{
+    HPRequest *request = [[HPRequestFactory sharedInstance] loginWithLogin:self.loginField.text password:self.passwordField.text];
+    
+    request.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
+        HPBaseMapper *mapper = [HPBaseMapper new];
+        HPBaseResponseObject *obj = [mapper mapFromData:responseObject withModel:[HPBaseResponseObject class]];
+        
+        
+        User *currentUser = [HPDatabase currentUser];
+        if(!currentUser) {
+            currentUser = [HPDatabase createUser];
+        }
+        currentUser.token = obj.additionalField;
+        currentUser.uid = [NSNumber numberWithInt:obj._id];
+    };
+    
+    return request;
+}
+
 
 @end

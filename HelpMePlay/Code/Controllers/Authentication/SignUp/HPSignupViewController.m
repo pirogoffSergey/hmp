@@ -9,6 +9,8 @@
 #import "HPSignupViewController.h"
 #import "HPNoEmptyFieldsValidatorObjective.h"
 #import "FDTakeController.h"
+#import "HPRequestFactory.h"
+#import "HPBaseMapper.h"
 
 
 @interface HPSignupViewController () <UITextFieldDelegate, FDTakeDelegate>
@@ -61,7 +63,10 @@
 - (IBAction)createUserTapped:(id)sender
 {
     if([self isFieldsDataValid]) {
+
         //send request
+        HPRequest *request = [self requestForSighUp];
+        [request start];
     }
 }
 
@@ -99,6 +104,19 @@
     validator.textFields = @[self.nameField, self.loginField, self.passwordField];
     [validator reach];
     return validator.checkingResult;
+}
+
+- (HPRequest *)requestForSighUp
+{
+    HPRequest *request = [[HPRequestFactory sharedInstance] createUserWithName:self.nameField.text
+                                                                         login:self.loginField.text
+                                                                      password:self.passwordField.text];
+    request.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
+        HPBaseMapper *mapper = [HPBaseMapper new];
+        HPBaseResponseObject *object = [mapper mapFromData:responseObject withModel:[HPBaseResponseObject class]];
+    };
+    
+    return request;
 }
 
 @end

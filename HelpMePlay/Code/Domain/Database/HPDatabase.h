@@ -13,5 +13,6 @@
 
 + (User *)currentUser;
 + (void)restoreCurrentUser;
++ (User *)createUser;
 
 @end
