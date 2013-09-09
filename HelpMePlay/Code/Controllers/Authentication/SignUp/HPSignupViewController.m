@@ -16,34 +16,63 @@
 @interface HPSignupViewController () <UITextFieldDelegate, FDTakeDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *userpicButton;
-
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *loginField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIButton *actionButton;
 
 @property (nonatomic, strong) FDTakeController *takePhotoController;
+
+@property (nonatomic, strong) User *userForContent;
 
 @end
 
 
 @implementation HPSignupViewController
 
+- (HPSignupViewController *)initUserInfoControllerWithUser:(User *)user
+{
+    self = [super init];
+    if (self) {
+        self.userForContent = user;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupNoUserpicButton];
+    [self setupAppearance];
 }
 
 
 #pragma mark -
 #pragma mark Setupers
 
+- (void)setupAppearance
+{
+    if(self.userForContent) {
+        [self setupWithUser:self.userForContent];
+    }
+    else {
+        [self setupNoUserpicButton];
+    }
+}
+
+- (void)setupWithUser:(User *)aUser
+{
+    self.nameField.text = aUser.name;
+    self.passwordField.text = @"not_available_now";
+    self.loginField.text = aUser.login;
+    
+    UIImage *userPic = (aUser.userpic) ? aUser.userpic : [self randNoUserpicImage];
+    [self.userpicButton setImage:userPic forState:UIControlStateNormal];
+    [self.actionButton setTitle:@"Change info" forState:UIControlStateNormal];
+}
+
 - (void)setupNoUserpicButton
 {
-    int rand = arc4random()%2;
-    if(rand) {
-        [self.userpicButton setImage:[UIImage imageNamed:@"nouser_male.jpg"] forState:UIControlStateNormal];
-    }
+    [self.userpicButton setImage:[self randNoUserpicImage] forState:UIControlStateNormal];
 }
 
 
@@ -119,4 +148,15 @@
     return request;
 }
 
+- (UIImage *)randNoUserpicImage
+{
+    int rand = arc4random()%2;
+    UIImage *result = (rand) ? [UIImage imageNamed:@"nouser_male.jpg"] : [UIImage imageNamed:@"nouser_male.jpg"];
+    return result;
+}
+
+- (void)viewDidUnload {
+    [self setActionButton:nil];
+    [super viewDidUnload];
+}
 @end

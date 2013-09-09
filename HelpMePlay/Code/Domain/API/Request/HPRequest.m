@@ -61,6 +61,8 @@
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
     requestOperation.queuePriority = NSOperationQueuePriorityVeryHigh;
     [requestOperation setCompletionBlockWithSuccess:[self defaultSuccessBlock] failure:[self defaultFailureBlock]];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [requestOperation start];    
 }
 
@@ -94,14 +96,13 @@
 - (AFSuccessBlock)defaultSuccessBlock
 {
     return ^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
-        NSLog(@"status code %d",[operation.response statusCode]);
-        id responseDictionary = [operation.responseString objectFromJSONString];
-                
         if(self.successBlock) {
-            self.successBlock(operation, responseDictionary);
+            self.successBlock(operation, [operation.responseString objectFromJSONString]);
         }
         else {
+            NSLog(@"*** status code %d",[operation.response statusCode]);
             NSLog(@"downlaoded successfuly with response: %@", operation.responseString);
         }
     };
@@ -110,12 +111,13 @@
 - (AFFailureBlock)defaultFailureBlock
 {
     return ^(AFHTTPRequestOperation *operation, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
         if(self.failureBlock) {
             self.failureBlock(operation, error);
         }
         else {
-            NSLog(@"status code %d",[operation.response statusCode]);
+            NSLog(@"*** status code %d",[operation.response statusCode]);
             NSLog(@"----------------\nfailure : %@\n\n", error);
         }
     };

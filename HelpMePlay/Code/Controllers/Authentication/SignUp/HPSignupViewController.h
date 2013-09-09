@@ -10,4 +10,6 @@
 
 @interface HPSignupViewController : HPBaseViewController
 
+- (HPSignupViewController *)initUserInfoControllerWithUser:(User *)user;
+
 @end
