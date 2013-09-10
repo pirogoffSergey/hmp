@@ -151,7 +151,7 @@
 - (UIImage *)randNoUserpicImage
 {
     int rand = arc4random()%2;
-    UIImage *result = (rand) ? [UIImage imageNamed:@"nouser_male.jpg"] : [UIImage imageNamed:@"nouser_male.jpg"];
+    UIImage *result = (rand) ? [UIImage imageNamed:@"nouser_male.jpg"] : [UIImage imageNamed:@"nouser_female.png"];
     return result;
 }
 

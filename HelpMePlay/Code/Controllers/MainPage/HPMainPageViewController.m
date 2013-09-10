@@ -7,7 +7,9 @@
 //
 
 #import "HPMainPageViewController.h"
+#import "HPSettingsViewController.h"
 #import "HPLoginViewController.h"
+
 
 @interface HPMainPageViewController ()
 
@@ -45,7 +47,12 @@
 
 -(void)settingsPressed:(id)sender
 {
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[HPLoginViewController new]];
+    UIViewController *controllerToPush = nil;
+    
+    User *user = [HPDatabase currentUser];
+    controllerToPush = (user && [user isLogged]) ? [HPSettingsViewController new] : [HPLoginViewController new];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controllerToPush];
     [self presentViewController:nav animated:YES completion:nil];
 }
 

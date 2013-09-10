@@ -10,6 +10,9 @@
 
 @implementation User
 
-// Custom logic goes here.
+- (BOOL)isLogged
+{
+    return (self.token != nil);
+}
 
 @end

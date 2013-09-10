@@ -2,6 +2,6 @@
 
 @interface User : _User {}
 
-
+- (BOOL)isLogged;
 
 @end

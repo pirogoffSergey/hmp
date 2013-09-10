@@ -35,7 +35,8 @@
 
 - (IBAction)userInfoPressed:(id)sender
 {
-    
+    HPSignupViewController *userInfoController = [[HPSignupViewController alloc] initUserInfoControllerWithUser:[HPDatabase currentUser]];
+    [self.navigationController pushViewController:userInfoController animated:YES];
 }
 
 - (void)closeController
