@@ -45,6 +45,11 @@
     [self setupAppearance];
 }
 
+- (NSString *)title
+{
+    return (self.userForContent) ? @"User Info" : @"Sign Up";
+}
+
 
 #pragma mark -
 #pragma mark Setupers

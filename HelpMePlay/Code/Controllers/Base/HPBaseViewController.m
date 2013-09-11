@@ -26,13 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (NSString *)title
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *title = NSStringFromClass(self.class);
+    title = [title stringByReplacingOccurrencesOfString:@"HP" withString:@""];
+    title = [title stringByReplacingOccurrencesOfString:@"ViewController" withString:@""];
+    return title;
 }
+
 
 @end
