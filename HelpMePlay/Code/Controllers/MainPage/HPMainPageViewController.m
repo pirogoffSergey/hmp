@@ -9,6 +9,7 @@
 #import "HPMainPageViewController.h"
 #import "HPSettingsViewController.h"
 #import "HPLoginViewController.h"
+#import "HPNavBarElementsProducer.h"
 
 
 @interface HPMainPageViewController ()
@@ -35,10 +36,7 @@
 
 - (void)setupSettingsButton
 {
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
-                                                                                    target:self
-                                                                                    action:@selector(settingsPressed:)];
-    self.navigationItem.leftBarButtonItems = @[settingsButton];
+    self.navigationItem.leftBarButtonItem = [HPNavBarElementsProducer settingsButtonWithTarget:self action:@selector(settingsPressed:)];
 }
 
 

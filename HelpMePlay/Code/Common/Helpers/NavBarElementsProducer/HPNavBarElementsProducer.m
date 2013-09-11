@@ -15,4 +15,9 @@
     return [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:target action:action];
 }
 
++ (UIBarButtonItem *)settingsButtonWithTarget:(id)target action:(SEL)action
+{
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:target action:action];
+}
+
 @end

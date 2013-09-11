@@ -13,5 +13,6 @@
 @interface HPNavBarElementsProducer : NSObject
 
 + (UIBarButtonItem *)closeButtonWithTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)settingsButtonWithTarget:(id)target action:(SEL)action;
 
 @end
