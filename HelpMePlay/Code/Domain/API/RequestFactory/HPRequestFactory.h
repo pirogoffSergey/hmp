@@ -20,10 +20,12 @@ extern const struct RequestMethods {
 
 + (HPRequestFactory *)sharedInstance;
 
+//user
 - (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password;
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password;
 - (HPRequest *)isLogged:(NSString *)token;
 - (HPRequest *)logout;
+- (HPRequest *)getUserInfoWithToken:(NSString *)token userID:(NSNumber *)userId;
 
 
 - (HPRequest *)sendPic;

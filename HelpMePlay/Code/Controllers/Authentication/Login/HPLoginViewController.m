@@ -11,6 +11,7 @@
 #import "HPNoEmptyFieldsValidatorObjective.h"
 #import "HPSignupViewController.h"
 #import "HPBaseMapper.h"
+#import "HPNavBarElementsProducer.h"
 
 
 @interface HPLoginViewController () <UITextFieldDelegate>
@@ -35,11 +36,7 @@
 
 - (void)setupCloseButton
 {
-    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc]initWithTitle:@"Close"
-                                                                 style:UIBarButtonItemStyleDone
-                                                                target:self
-                                                                action:@selector(closeButtonPressed:)];
-    self.navigationItem.leftBarButtonItem = closeItem;
+    self.navigationItem.leftBarButtonItem = [HPNavBarElementsProducer closeButtonWithTarget:self action:@selector(closeButtonPressed:)];
 }
 
 
@@ -111,11 +108,29 @@
         currentUser.token = obj.additionalField;
         currentUser.uid = [NSNumber numberWithInt:obj._id];
         
+        
         //after this. need to send "users.get" to get all info about user (pic, name, etc)
+//        HPRequest *getUserInfo = [self getUserInfoRequest:currentUser.token userID:currentUser.uid];
+//        [getUserInfo start];
+        
+        [HPDatabase saveDataBase];
+        [self closeButtonPressed:nil];
+        [HPAlert showSuccesMessage:@"Hello, user"];
     };
     
     return request;
 }
 
+- (HPRequest *)getUserInfoRequest:(NSString *)token userID:(NSNumber *)userId
+{
+    NSParameterAssert(token);
+    NSParameterAssert(userId);
+    
+    HPRequest *request = [[HPRequestFactory sharedInstance] getUserInfoWithToken:token userID:userId];
+    
+    //add success handler
+    
+    return request;
+}
 
 @end

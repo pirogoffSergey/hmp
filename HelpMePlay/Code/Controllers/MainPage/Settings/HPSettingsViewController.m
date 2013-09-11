@@ -9,6 +9,7 @@
 #import "HPSettingsViewController.h"
 #import "HPRequestFactory.h"
 #import "HPSignupViewController.h"
+#import "HPNavBarElementsProducer.h"
 
 
 @interface HPSettingsViewController ()
@@ -21,6 +22,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupCloseButton];
+}
+
+
+#pragma mark -
+#pragma mark Setupers
+
+- (void)setupCloseButton
+{
+    self.navigationItem.leftBarButtonItem = [HPNavBarElementsProducer closeButtonWithTarget:self action:@selector(closeButtonPressed:)];
 }
 
 
@@ -30,7 +41,7 @@
 - (IBAction)logoutPressed:(id)sender
 {
     [[HPRequestFactory sharedInstance] logout];
-    [self closeController];
+    [self closeButtonPressed:nil];
 }
 
 - (IBAction)userInfoPressed:(id)sender
@@ -39,9 +50,9 @@
     [self.navigationController pushViewController:userInfoController animated:YES];
 }
 
-- (void)closeController
+- (void)closeButtonPressed:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 

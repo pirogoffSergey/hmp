@@ -77,7 +77,7 @@
         
         AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:APIUrls.baseURL]];
         urlRequest = [httpClient requestWithMethod:[self currentHTTPMethod]
-                                              path:nil
+                                              path:self.URL.absoluteString
                                         parameters:self.body];
         urlRequest.timeoutInterval = 60/*sec*/ *2; // 2 minutes
     }

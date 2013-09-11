@@ -14,6 +14,11 @@
 
 @implementation HPDatabase
 
++ (void)saveDataBase
+{
+    [[HPDataBaseHelper sharedInstance] saveContext];
+}
+
 + (User *)currentUser
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[User entityName]];

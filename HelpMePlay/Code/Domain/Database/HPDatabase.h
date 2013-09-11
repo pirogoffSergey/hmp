@@ -11,6 +11,8 @@
 
 @interface HPDatabase : NSObject
 
++ (void)saveDataBase;
+
 + (User *)currentUser;
 + (void)restoreCurrentUser;
 + (User *)createUser;

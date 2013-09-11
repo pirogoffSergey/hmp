@@ -68,6 +68,8 @@
 		3057687A17C8F1C000000BAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057687917C8F1C000000BAE /* Default-568h@2x.png */; };
 		3057689417C8FDBF00000BAE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689317C8FDBF00000BAE /* icon@2x.png */; };
 		3057689617C8FDC400000BAE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689517C8FDC400000BAE /* icon.png */; };
+		30A1AB7417E10A59006383A6 /* HPAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A1AB7317E10A59006383A6 /* HPAlert.m */; };
+		30A1AB7817E10DA5006383A6 /* HPNavBarElementsProducer.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A1AB7717E10DA5006383A6 /* HPNavBarElementsProducer.m */; };
 		30AEF32817DE66A00082B8CC /* HPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AEF32617DE66A00082B8CC /* HPSettingsViewController.m */; };
 		30AEF32917DE66A00082B8CC /* HPSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30AEF32717DE66A00082B8CC /* HPSettingsViewController.xib */; };
 		30BEDDE517DD0CB6003D2C8E /* HPBaseResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BEDDE417DD0CB6003D2C8E /* HPBaseResponseObject.m */; };
@@ -168,6 +170,10 @@
 		3057687917C8F1C000000BAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3057689317C8FDBF00000BAE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		3057689517C8FDC400000BAE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		30A1AB7217E10A59006383A6 /* HPAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAlert.h; sourceTree = "<group>"; };
+		30A1AB7317E10A59006383A6 /* HPAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAlert.m; sourceTree = "<group>"; };
+		30A1AB7617E10DA5006383A6 /* HPNavBarElementsProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPNavBarElementsProducer.h; sourceTree = "<group>"; };
+		30A1AB7717E10DA5006383A6 /* HPNavBarElementsProducer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPNavBarElementsProducer.m; sourceTree = "<group>"; };
 		30AEF32517DE66A00082B8CC /* HPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSettingsViewController.h; sourceTree = "<group>"; };
 		30AEF32617DE66A00082B8CC /* HPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSettingsViewController.m; sourceTree = "<group>"; };
 		30AEF32717DE66A00082B8CC /* HPSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPSettingsViewController.xib; sourceTree = "<group>"; };
@@ -447,6 +453,8 @@
 		3057688517C8F23100000BAE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				30A1AB7517E10D7F006383A6 /* NavBarElementsProducer */,
+				30A1AB7117E10A39006383A6 /* HPAlert */,
 				301454C217D24EA400351CCF /* DataBaseHelper */,
 			);
 			path = Helpers;
@@ -589,6 +597,24 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		30A1AB7117E10A39006383A6 /* HPAlert */ = {
+			isa = PBXGroup;
+			children = (
+				30A1AB7217E10A59006383A6 /* HPAlert.h */,
+				30A1AB7317E10A59006383A6 /* HPAlert.m */,
+			);
+			path = HPAlert;
+			sourceTree = "<group>";
+		};
+		30A1AB7517E10D7F006383A6 /* NavBarElementsProducer */ = {
+			isa = PBXGroup;
+			children = (
+				30A1AB7617E10DA5006383A6 /* HPNavBarElementsProducer.h */,
+				30A1AB7717E10DA5006383A6 /* HPNavBarElementsProducer.m */,
+			);
+			path = NavBarElementsProducer;
 			sourceTree = "<group>";
 		};
 		30AEF32417DE667F0082B8CC /* Settings */ = {
@@ -856,6 +882,8 @@
 				30BEDDE517DD0CB6003D2C8E /* HPBaseResponseObject.m in Sources */,
 				30BEDDE917DD1A28003D2C8E /* HPEntityCreator.m in Sources */,
 				30AEF32817DE66A00082B8CC /* HPSettingsViewController.m in Sources */,
+				30A1AB7417E10A59006383A6 /* HPAlert.m in Sources */,
+				30A1AB7817E10DA5006383A6 /* HPNavBarElementsProducer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,10 +34,9 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password
 {
-    HPRequest *request = [HPRequest new];
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.set]];
     request.HTTPMethod = RequestMethods.post;
     [request addBody: @{
-         @"method": APIGroups.usersSet,
          @"name" :name,
          @"login":login,
          @"password":password
@@ -47,10 +46,11 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password
 {
+   // HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.auth]];
     HPRequest *request = [HPRequest new];
     request.HTTPMethod = RequestMethods.post;
     [request addBody: @{
-         @"method"  :APIGroups.usersAuth,
+        @"method"   :@"users.auth",
          @"login"   :login,
          @"password":password
      }];
@@ -59,11 +59,10 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)isLogged:(NSString *)token
 {
-    HPRequest *request = [HPRequest new];
-    request.HTTPMethod = RequestMethods.post;
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.isLogged]];
+    request.HTTPMethod = RequestMethods.get;
     [request addBody: @{
-     @"method"  :APIGroups.usersAuth,
-     @"token"   :token,
+         @"token"   :token,
      }];
     return request;
 }
@@ -74,8 +73,21 @@ const struct RequestMethods RequestMethods = {
     return nil;
 }
 
+- (HPRequest *)getUserInfoWithToken:(NSString *)token userID:(NSNumber *)userId
+{
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.get]];
+    request.HTTPMethod = RequestMethods.get;
+    [request addBody: @{
+         @"token"   :token,
+         @"id"      :userId,
+     }];
+    
+    return request;
+}
 
 
+
+// --------------
 
 - (HPRequest *)sendPic
 {
@@ -94,6 +106,11 @@ const struct RequestMethods RequestMethods = {
 
 #pragma mark -
 #pragma mark Helpers
+
+- (NSString *)pathForUserMethods:(NSString *)subPath
+{
+    return [NSString stringWithFormat:@"%@/%@", APIGroups.users, subPath];
+}
 
 - (BOOL)isClearString:(NSString *)string
 {

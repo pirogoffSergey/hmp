@@ -14,8 +14,16 @@ extern const struct APIUrls {
 
 
 extern const struct APIGroups {
-    __unsafe_unretained NSString *usersSet;
-    __unsafe_unretained NSString *usersGet;
-    __unsafe_unretained NSString *usersAuth;
-    __unsafe_unretained NSString *usersIsLogged;
+    __unsafe_unretained NSString *users;
+//    __unsafe_unretained NSString *usersGet;
+//    __unsafe_unretained NSString *usersAuth;
+//    __unsafe_unretained NSString *usersIsLogged;
 } APIGroups;
+
+
+extern const struct APIUserMethods {
+    __unsafe_unretained NSString *set;
+    __unsafe_unretained NSString *get;
+    __unsafe_unretained NSString *auth;
+    __unsafe_unretained NSString *isLogged;
+} APIUserMethods;

@@ -14,8 +14,24 @@ const struct APIUrls APIUrls = {
 
 
 const struct APIGroups APIGroups = {
-    .usersSet = @"users.set",
-    .usersGet = @"users.get",
-    .usersAuth = @"users.auth",
-    .usersIsLogged = @"users.isLogged",
+    .users = @"users",
+//    .usersGet = @"users.get",
+//    .usersAuth = @"users.auth",
+//    .usersIsLogged = @"users.isLogged",
+};
+
+
+//const struct APIGroups APIGroups = {
+//    .usersSet = @"users.set",
+//    .usersGet = @"users.get",
+//    .usersAuth = @"users.auth",
+//    .usersIsLogged = @"users.isLogged",
+//};
+
+
+const struct APIUserMethods APIUserMethods = {
+    .set = @"set",
+    .get = @"get",
+    .auth = @"auth",
+    .isLogged = @"isLogged",
 };
