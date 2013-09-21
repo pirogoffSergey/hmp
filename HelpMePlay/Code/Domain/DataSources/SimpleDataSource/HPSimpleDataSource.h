@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSArray *records;
 
+@property (nonatomic, copy) NSArray * (^reloadBlock)();
+
 @end

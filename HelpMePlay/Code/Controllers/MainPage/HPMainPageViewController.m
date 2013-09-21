@@ -62,15 +62,7 @@
 
 - (IBAction)authorsTapped:(id)sender
 {
-    HPBaseListViewController *list = [HPBaseListViewController new];
-    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
-    dataSource.records = [HPDatabase allAuthors];
-    list.dataSource = dataSource;
-    
-    list.addActionBlock = ^(UIViewController *controller){
-        [controller.navigationController pushViewController:[HPAuthorViewController new] animated:YES];
-    };
-    [self.navigationController pushViewController:list animated:YES];
+    [self.navigationController pushViewController:[self authorsList] animated:YES];
 }
 
 - (IBAction)playlistsTapped:(id)sender
@@ -92,4 +84,27 @@
     [self.navigationController pushViewController:list animated:YES];
 }
 
+
+#pragma mark -
+#pragma mark Helpers
+
+- (HPBaseListViewController *)authorsList
+{
+    HPBaseListViewController *list = [HPBaseListViewController new];
+    list.title = @"TILE";
+    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
+    dataSource.reloadBlock = ^{
+        return [HPDatabase allAuthors];
+    };
+    list.dataSource = dataSource;
+    
+    list.addActionBlock = ^(UIViewController *controller){
+        [controller.navigationController pushViewController:[HPAuthorViewController new] animated:YES];
+    };
+    return list;
+}
+
 @end
+
+
+

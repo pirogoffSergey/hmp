@@ -147,6 +147,10 @@ typedef enum {
 
 - (Author *)createAuthorWithCurrentData
 {
+    if(!self.firstNameTF.text.length && !self.lastNameTF.text.length) {
+        return nil;
+    }
+    
     HPEntityCreator *creator = [HPEntityCreator new];
     creator.entityClass = [Author class];
     [creator reach];

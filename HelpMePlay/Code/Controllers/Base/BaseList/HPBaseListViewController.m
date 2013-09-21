@@ -22,6 +22,12 @@
     [self setupAppearance];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.dataSource reload];
+}
+
 
 #pragma mark -
 #pragma mark Setupers

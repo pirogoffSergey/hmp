@@ -32,6 +32,12 @@
     cell.textLabel.text = text;
 }
 
-
+- (void)reload
+{
+    if(self.reloadBlock) {
+        self.records = self.reloadBlock();
+    }
+    [super reload];
+}
 
 @end
