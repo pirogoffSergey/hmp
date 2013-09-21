@@ -5,6 +5,8 @@
 #import "Composer.h"
 
 extern const struct AuthorAttributes {
+	__unsafe_unretained NSString *gender;
+	__unsafe_unretained NSString *lastName;
 } AuthorAttributes;
 
 extern const struct AuthorRelationships {
@@ -12,6 +14,8 @@ extern const struct AuthorRelationships {
 
 extern const struct AuthorFetchedProperties {
 } AuthorFetchedProperties;
+
+
 
 
 
@@ -28,6 +32,26 @@ extern const struct AuthorFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSString* gender;
+
+
+
+//- (BOOL)validateGender:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSString* lastName;
+
+
+
+//- (BOOL)validateLastName:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
 
 @end
 
@@ -36,6 +60,18 @@ extern const struct AuthorFetchedProperties {
 @end
 
 @interface _Author (CoreDataGeneratedPrimitiveAccessors)
+
+
+- (NSString*)primitiveGender;
+- (void)setPrimitiveGender:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveLastName;
+- (void)setPrimitiveLastName:(NSString*)value;
+
+
 
 
 @end

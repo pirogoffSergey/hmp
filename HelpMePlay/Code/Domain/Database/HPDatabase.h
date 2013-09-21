@@ -17,4 +17,6 @@
 + (void)restoreCurrentUser;
 + (User *)createUser;
 
++ (NSArray *)allAuthors;
+
 @end

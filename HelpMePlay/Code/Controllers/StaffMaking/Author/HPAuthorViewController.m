@@ -8,6 +8,9 @@
 
 #import "HPAuthorViewController.h"
 #import "HPNavBarElementsProducer.h"
+#import "FDTakeController.h"
+#import "HPEntityCreator.h"
+#import "Author.h"
 
 typedef enum {
     HPPickerVisibile,
@@ -16,11 +19,20 @@ typedef enum {
 
 
 
-@interface HPAuthorViewController () <UITextFieldDelegate>
+@interface HPAuthorViewController () <UITextFieldDelegate, FDTakeDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *countryTF;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genderSelector;
+@property (weak, nonatomic) IBOutlet UIButton *authorPicButton;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirthTextField;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) UIDatePicker *datePicker;
+
+@property (nonatomic, strong) FDTakeController *takePhotoController;
 
 @end
 
@@ -92,11 +104,31 @@ typedef enum {
 
 
 #pragma mark -
+#pragma mark FDTakeDelegate
+
+- (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info;
+{
+    [self.authorPicButton setImage:photo forState:UIControlStateNormal];
+}
+
+
+#pragma mark -
 #pragma mark Actions
 
 - (void)doneButtonPressed:(id)sender
 {
+    [self createAuthorWithCurrentData];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)changePhotoPressed:(id)sender
+{
+    if(!self.takePhotoController) {
+        self.takePhotoController = [FDTakeController new];
+        self.takePhotoController.delegate = self;
+        self.takePhotoController.viewControllerForPresentingImagePickerController = self;
+    }
+    [self.takePhotoController takePhotoOrChooseFromLibrary];
 }
 
 - (IBAction)itsBandPressed:(id)sender
@@ -107,6 +139,27 @@ typedef enum {
 - (IBAction)relatedSongsPressed:(id)sender
 {
     
+}
+
+
+#pragma mark -
+#pragma mark Helpers
+
+- (Author *)createAuthorWithCurrentData
+{
+    HPEntityCreator *creator = [HPEntityCreator new];
+    creator.entityClass = [Author class];
+    [creator reach];
+    
+    Author *author = creator.createdEntityObject;
+    author.name = self.firstNameTF.text;
+    author.lastName = self.lastNameTF.text;
+    author.country = self.countryTF.text;
+    author.gender = (!self.genderSelector.selectedSegmentIndex) ? @"male" : @"female";
+    author.pic = self.authorPicButton.imageView.image;
+    
+    [HPDatabase saveDataBase];
+    return author;
 }
 
 @end

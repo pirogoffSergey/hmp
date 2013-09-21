@@ -4,6 +4,7 @@
 #import "_Composer.h"
 
 const struct ComposerAttributes ComposerAttributes = {
+	.country = @"country",
 	.name = @"name",
 	.pic = @"pic",
 	.uid = @"uid",
@@ -49,6 +50,13 @@ const struct ComposerFetchedProperties ComposerFetchedProperties = {
 
 	return keyPaths;
 }
+
+
+
+
+@dynamic country;
+
+
 
 
 

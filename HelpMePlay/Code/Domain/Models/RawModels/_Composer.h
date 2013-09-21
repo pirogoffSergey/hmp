@@ -5,6 +5,7 @@
 
 
 extern const struct ComposerAttributes {
+	__unsafe_unretained NSString *country;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *pic;
 	__unsafe_unretained NSString *uid;
@@ -15,6 +16,7 @@ extern const struct ComposerRelationships {
 
 extern const struct ComposerFetchedProperties {
 } ComposerFetchedProperties;
+
 
 
 
@@ -29,6 +31,16 @@ extern const struct ComposerFetchedProperties {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (ComposerID*)objectID;
+
+
+
+
+
+@property (nonatomic, strong) NSString* country;
+
+
+
+//- (BOOL)validateCountry:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -76,6 +88,12 @@ extern const struct ComposerFetchedProperties {
 @end
 
 @interface _Composer (CoreDataGeneratedPrimitiveAccessors)
+
+
+- (NSString*)primitiveCountry;
+- (void)setPrimitiveCountry:(NSString*)value;
+
+
 
 
 - (NSString*)primitiveName;

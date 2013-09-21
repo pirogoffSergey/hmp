@@ -70,6 +70,10 @@
 		3057689617C8FDC400000BAE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689517C8FDC400000BAE /* icon.png */; };
 		307B490317EDC10F005D03C4 /* HPAuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307B490117EDC10F005D03C4 /* HPAuthorViewController.m */; };
 		307B490417EDC10F005D03C4 /* HPAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B490217EDC10F005D03C4 /* HPAuthorViewController.xib */; };
+		307B490917EDE119005D03C4 /* HPAddSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307B490717EDE119005D03C4 /* HPAddSongViewController.m */; };
+		307B490A17EDE119005D03C4 /* HPAddSongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B490817EDE119005D03C4 /* HPAddSongViewController.xib */; };
+		307B490D17EDE224005D03C4 /* default_song_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307B490C17EDE224005D03C4 /* default_song_cover.jpg */; };
+		307B495C17EE4770005D03C4 /* HPSimpleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 307B495B17EE4770005D03C4 /* HPSimpleDataSource.m */; };
 		30A1AB7417E10A59006383A6 /* HPAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A1AB7317E10A59006383A6 /* HPAlert.m */; };
 		30A1AB7817E10DA5006383A6 /* HPNavBarElementsProducer.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A1AB7717E10DA5006383A6 /* HPNavBarElementsProducer.m */; };
 		30AEF32817DE66A00082B8CC /* HPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AEF32617DE66A00082B8CC /* HPSettingsViewController.m */; };
@@ -175,6 +179,12 @@
 		307B490017EDC10F005D03C4 /* HPAuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAuthorViewController.h; sourceTree = "<group>"; };
 		307B490117EDC10F005D03C4 /* HPAuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAuthorViewController.m; sourceTree = "<group>"; };
 		307B490217EDC10F005D03C4 /* HPAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPAuthorViewController.xib; sourceTree = "<group>"; };
+		307B490617EDE119005D03C4 /* HPAddSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAddSongViewController.h; sourceTree = "<group>"; };
+		307B490717EDE119005D03C4 /* HPAddSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAddSongViewController.m; sourceTree = "<group>"; };
+		307B490817EDE119005D03C4 /* HPAddSongViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPAddSongViewController.xib; sourceTree = "<group>"; };
+		307B490C17EDE224005D03C4 /* default_song_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_song_cover.jpg; sourceTree = "<group>"; };
+		307B495A17EE4770005D03C4 /* HPSimpleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSimpleDataSource.h; sourceTree = "<group>"; };
+		307B495B17EE4770005D03C4 /* HPSimpleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSimpleDataSource.m; sourceTree = "<group>"; };
 		30A1AB7217E10A59006383A6 /* HPAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAlert.h; sourceTree = "<group>"; };
 		30A1AB7317E10A59006383A6 /* HPAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAlert.m; sourceTree = "<group>"; };
 		30A1AB7617E10DA5006383A6 /* HPNavBarElementsProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPNavBarElementsProducer.h; sourceTree = "<group>"; };
@@ -287,6 +297,7 @@
 		301454E217D268F500351CCF /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				307B490B17EDE224005D03C4 /* song_cover */,
 				301454E317D268F500351CCF /* noUserPic */,
 			);
 			path = Icons;
@@ -517,6 +528,7 @@
 		3057688B17C8F23100000BAE /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				307B495917EE475B005D03C4 /* SimpleDataSource */,
 				301454F317D2825C00351CCF /* BaseDataSource */,
 			);
 			path = DataSources;
@@ -608,6 +620,7 @@
 		307B48FE17EDC0E4005D03C4 /* StaffMaking */ = {
 			isa = PBXGroup;
 			children = (
+				307B490517EDE102005D03C4 /* Song */,
 				307B48FF17EDC0E4005D03C4 /* Author */,
 			);
 			path = StaffMaking;
@@ -621,6 +634,33 @@
 				307B490217EDC10F005D03C4 /* HPAuthorViewController.xib */,
 			);
 			path = Author;
+			sourceTree = "<group>";
+		};
+		307B490517EDE102005D03C4 /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				307B490617EDE119005D03C4 /* HPAddSongViewController.h */,
+				307B490717EDE119005D03C4 /* HPAddSongViewController.m */,
+				307B490817EDE119005D03C4 /* HPAddSongViewController.xib */,
+			);
+			path = Song;
+			sourceTree = "<group>";
+		};
+		307B490B17EDE224005D03C4 /* song_cover */ = {
+			isa = PBXGroup;
+			children = (
+				307B490C17EDE224005D03C4 /* default_song_cover.jpg */,
+			);
+			path = song_cover;
+			sourceTree = "<group>";
+		};
+		307B495917EE475B005D03C4 /* SimpleDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				307B495A17EE4770005D03C4 /* HPSimpleDataSource.h */,
+				307B495B17EE4770005D03C4 /* HPSimpleDataSource.m */,
+			);
+			path = SimpleDataSource;
 			sourceTree = "<group>";
 		};
 		30A1AB7117E10A39006383A6 /* HPAlert */ = {
@@ -799,12 +839,14 @@
 				3057686E17C8F1C000000BAE /* InfoPlist.strings in Resources */,
 				3057687617C8F1C000000BAE /* Default.png in Resources */,
 				3057687817C8F1C000000BAE /* Default@2x.png in Resources */,
+				307B490D17EDE224005D03C4 /* default_song_cover.jpg in Resources */,
 				3057687A17C8F1C000000BAE /* Default-568h@2x.png in Resources */,
 				3057689417C8FDBF00000BAE /* icon@2x.png in Resources */,
 				3057689617C8FDC400000BAE /* icon.png in Resources */,
 				301454DB17D2664A00351CCF /* HPLoginViewController.xib in Resources */,
 				301454E017D2667A00351CCF /* HPSignupViewController.xib in Resources */,
 				301454E617D268F500351CCF /* nouser_female.png in Resources */,
+				307B490A17EDE119005D03C4 /* HPAddSongViewController.xib in Resources */,
 				307B490417EDC10F005D03C4 /* HPAuthorViewController.xib in Resources */,
 				301454E717D268F500351CCF /* nouser_male.jpg in Resources */,
 				301454F217D277C800351CCF /* HPMainPageViewController.xib in Resources */,
@@ -879,6 +921,7 @@
 				302CD10D17C951C000561185 /* _Audio.m in Sources */,
 				302CD10E17C951C000561185 /* _Author.m in Sources */,
 				302CD10F17C951C000561185 /* _Band.m in Sources */,
+				307B495C17EE4770005D03C4 /* HPSimpleDataSource.m in Sources */,
 				302CD11017C951C000561185 /* _Composer.m in Sources */,
 				302CD11117C951C000561185 /* _MediaItem.m in Sources */,
 				302CD11217C951C000561185 /* _MediaLinks.m in Sources */,
@@ -892,6 +935,7 @@
 				30FAAEE517C9618C00299126 /* HPRequest.m in Sources */,
 				30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */,
 				30FAAEEC17C9619A00299126 /* HPAPIDefines.m in Sources */,
+				307B490917EDE119005D03C4 /* HPAddSongViewController.m in Sources */,
 				30FAAEED17C9619A00299126 /* HPDefines.m in Sources */,
 				30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */,
 				301454C517D24EB900351CCF /* HPDataBaseHelper.m in Sources */,

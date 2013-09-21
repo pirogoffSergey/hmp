@@ -7,7 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HPAuthorViewController">
             <connections>
+                <outlet property="authorPicButton" destination="Ywc-Mp-Xlm" id="GWj-y4-pFi"/>
+                <outlet property="countryTF" destination="4Nc-qv-d2H" id="SDJ-NV-EZh"/>
                 <outlet property="dateOfBirthTextField" destination="aEP-79-ewq" id="QZ6-Uh-YrU"/>
+                <outlet property="firstNameTF" destination="0gw-ED-hZT" id="VEq-Xi-INR"/>
+                <outlet property="genderSelector" destination="FjZ-DH-6jq" id="Tlz-0i-8DB"/>
+                <outlet property="lastNameTF" destination="Qq2-Xf-Qjc" id="M8u-Ac-Dnc"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -23,6 +28,9 @@
                     <state key="normal" image="nouser_female.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="changePhotoPressed:" destination="-1" eventType="touchUpInside" id="1G1-HV-EjJ"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" minimumFontSize="17" id="0gw-ED-hZT">
                     <rect key="frame" x="161" y="20" width="139" height="30"/>

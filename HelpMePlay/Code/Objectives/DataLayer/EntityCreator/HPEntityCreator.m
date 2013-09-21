@@ -21,7 +21,6 @@
     }
     
     
-    
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass(self.entityClass)
                                                          inManagedObjectContext:self.context];
     self.createdEntityObject = [[self.entityClass alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:self.context];

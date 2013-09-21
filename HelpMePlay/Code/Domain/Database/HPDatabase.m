@@ -11,6 +11,8 @@
 #import "HPEntityDeletingObjective.h"
 #import "HPEntityCreator.h"
 
+#import "Author.h"
+
 
 @implementation HPDatabase
 
@@ -62,13 +64,16 @@
 }
 
 
-//+ (NSArray *)vendors
-//{
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[Vendor entityName]];
-//    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:VendorAttributes.name ascending:YES]];
-//    
-//    return [[QRDataBaseHelper sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
-//}
+
+
++ (NSArray *)allAuthors
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[Author entityName]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:ComposerAttributes.name ascending:YES]];
+    return [[HPDataBaseHelper sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+}
+
+
 //
 //+ (NSArray *)modelsForVendor:(NSString *)vendorName
 //{

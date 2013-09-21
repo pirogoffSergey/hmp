@@ -13,6 +13,8 @@
 
 #import "HPBaseListViewController.h"
 #import "HPAuthorViewController.h"
+#import "HPAddSongViewController.h"
+#import "HPSimpleDataSource.h"
 
 
 @interface HPMainPageViewController ()
@@ -61,10 +63,13 @@
 - (IBAction)authorsTapped:(id)sender
 {
     HPBaseListViewController *list = [HPBaseListViewController new];
+    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
+    dataSource.records = [HPDatabase allAuthors];
+    list.dataSource = dataSource;
+    
     list.addActionBlock = ^(UIViewController *controller){
         [controller.navigationController pushViewController:[HPAuthorViewController new] animated:YES];
     };
-    
     [self.navigationController pushViewController:list animated:YES];
 }
 
@@ -80,7 +85,11 @@
 
 - (IBAction)allSongsTapped:(id)sender
 {
-    
+    HPBaseListViewController *list = [HPBaseListViewController new];
+    list.addActionBlock = ^(UIViewController *controller){
+        [controller.navigationController pushViewController:[HPAddSongViewController new] animated:YES];
+    };
+    [self.navigationController pushViewController:list animated:YES];
 }
 
 @end

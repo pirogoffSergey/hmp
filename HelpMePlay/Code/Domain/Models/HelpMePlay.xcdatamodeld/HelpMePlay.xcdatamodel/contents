@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Audio" representedClassName="Audio" parentEntity="MediaItem" syncable="YES"/>
-    <entity name="Author" representedClassName="Author" parentEntity="Composer" syncable="YES"/>
+    <entity name="Author" representedClassName="Author" parentEntity="Composer" syncable="YES">
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Band" representedClassName="Band" parentEntity="Composer" syncable="YES"/>
     <entity name="Composer" representedClassName="Composer" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pic" optional="YES" attributeType="Transformable" syncable="YES">
             <userInfo>
@@ -54,15 +58,15 @@
     </entity>
     <entity name="Video" representedClassName="Video" parentEntity="MediaItem" syncable="YES"/>
     <elements>
-        <element name="Audio" positionX="-65" positionY="72" width="128" height="43"/>
-        <element name="Author" positionX="-243" positionY="72" width="128" height="43"/>
-        <element name="Band" positionX="-396" positionY="74" width="128" height="43"/>
-        <element name="Composer" positionX="-324" positionY="-43" width="128" height="88"/>
-        <element name="MediaItem" positionX="-2" positionY="-36" width="128" height="73"/>
-        <element name="MediaLinks" positionX="214" positionY="72" width="128" height="43"/>
-        <element name="Playlist" positionX="-452" positionY="-315" width="128" height="88"/>
-        <element name="Record" positionX="-191" positionY="-234" width="128" height="163"/>
-        <element name="User" positionX="-675" positionY="-441" width="128" height="135"/>
-        <element name="Video" positionX="79" positionY="72" width="128" height="43"/>
+        <element name="Audio" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Author" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Band" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Composer" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MediaItem" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MediaLinks" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Playlist" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Record" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Video" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
