@@ -46,7 +46,9 @@
 {}
 
 - (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
-{}
+{
+    NSAssert(nil, @"need to implement");
+}
 
 - (void)reload
 {

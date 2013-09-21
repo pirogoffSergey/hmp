@@ -40,4 +40,12 @@
     [super reload];
 }
 
+
+- (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.delegate) {
+        [self.delegate didSelectRowAtIndexPath:indexPath withItem:self.records[indexPath.row]];
+    }
+}
+
 @end
