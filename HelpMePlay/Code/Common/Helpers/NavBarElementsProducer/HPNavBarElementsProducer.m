@@ -20,4 +20,14 @@
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:target action:action];
 }
 
++ (UIBarButtonItem *)addButtonWithTarget:(id)target action:(SEL)action
+{
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:target action:action];
+}
+
++ (UIBarButtonItem *)doneButtonWithTarget:(id)target action:(SEL)action
+{
+    return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:target action:action];
+}
+
 @end

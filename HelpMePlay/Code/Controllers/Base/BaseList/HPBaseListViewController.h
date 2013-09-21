@@ -9,9 +9,12 @@
 #import "HPBaseViewController.h"
 #import "HPBaseDataSource.h"
 
+
 @interface HPBaseListViewController : HPBaseViewController
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) HPBaseDataSource *dataSource;
+
+@property (nonatomic, copy) void (^addActionBlock)(UIViewController *parentController);
 
 @end

@@ -14,5 +14,7 @@
 
 + (UIBarButtonItem *)closeButtonWithTarget:(id)target action:(SEL)action;
 + (UIBarButtonItem *)settingsButtonWithTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)addButtonWithTarget:(id)target action:(SEL)action;
++ (UIBarButtonItem *)doneButtonWithTarget:(id)target action:(SEL)action;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "HPBaseListViewController.h"
+#import "HPNavBarElementsProducer.h"
+
 
 @interface HPBaseListViewController () <VTDataSourceDelegate>
 @end
@@ -17,17 +19,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupDataSource];
+    [self setupAppearance];
 }
 
 
 #pragma mark -
 #pragma mark Setupers
 
+- (void)setupAppearance
+{
+    [self setupTableView];
+    [self setupDataSource];
+    [self setupAddButton];
+    self.view.backgroundColor = [UIColor greenColor];
+}
+
 - (void)setupTableView
 {
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    self.tableView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.tableView];
 }
 
@@ -38,12 +49,25 @@
     self.dataSource.delegate = self;
 }
 
+- (void)setupAddButton
+{
+    self.navigationItem.rightBarButtonItem = [HPNavBarElementsProducer addButtonWithTarget:self action:@selector(addButtonPressed:)];
+}
+
+
 #pragma mark -
-#pragma mark 
+#pragma mark Selection
 
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item
 {
     NSLog(@"selected item = %@", item);
+}
+
+- (void)addButtonPressed:(id)target
+{
+    if(self.addActionBlock) {
+        self.addActionBlock(self);
+    }
 }
 
 @end

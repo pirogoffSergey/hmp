@@ -68,6 +68,8 @@
 		3057687A17C8F1C000000BAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057687917C8F1C000000BAE /* Default-568h@2x.png */; };
 		3057689417C8FDBF00000BAE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689317C8FDBF00000BAE /* icon@2x.png */; };
 		3057689617C8FDC400000BAE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3057689517C8FDC400000BAE /* icon.png */; };
+		307B490317EDC10F005D03C4 /* HPAuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307B490117EDC10F005D03C4 /* HPAuthorViewController.m */; };
+		307B490417EDC10F005D03C4 /* HPAuthorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307B490217EDC10F005D03C4 /* HPAuthorViewController.xib */; };
 		30A1AB7417E10A59006383A6 /* HPAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A1AB7317E10A59006383A6 /* HPAlert.m */; };
 		30A1AB7817E10DA5006383A6 /* HPNavBarElementsProducer.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A1AB7717E10DA5006383A6 /* HPNavBarElementsProducer.m */; };
 		30AEF32817DE66A00082B8CC /* HPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AEF32617DE66A00082B8CC /* HPSettingsViewController.m */; };
@@ -170,6 +172,9 @@
 		3057687917C8F1C000000BAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3057689317C8FDBF00000BAE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		3057689517C8FDC400000BAE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		307B490017EDC10F005D03C4 /* HPAuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAuthorViewController.h; sourceTree = "<group>"; };
+		307B490117EDC10F005D03C4 /* HPAuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAuthorViewController.m; sourceTree = "<group>"; };
+		307B490217EDC10F005D03C4 /* HPAuthorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPAuthorViewController.xib; sourceTree = "<group>"; };
 		30A1AB7217E10A59006383A6 /* HPAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAlert.h; sourceTree = "<group>"; };
 		30A1AB7317E10A59006383A6 /* HPAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAlert.m; sourceTree = "<group>"; };
 		30A1AB7617E10DA5006383A6 /* HPNavBarElementsProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPNavBarElementsProducer.h; sourceTree = "<group>"; };
@@ -470,9 +475,10 @@
 		3057688717C8F23100000BAE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				301454ED17D277B600351CCF /* MainPage */,
 				30C64A5817D22E570059DF84 /* Authentication */,
 				3057688817C8F23100000BAE /* Base */,
+				301454ED17D277B600351CCF /* MainPage */,
+				307B48FE17EDC0E4005D03C4 /* StaffMaking */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -597,6 +603,24 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		307B48FE17EDC0E4005D03C4 /* StaffMaking */ = {
+			isa = PBXGroup;
+			children = (
+				307B48FF17EDC0E4005D03C4 /* Author */,
+			);
+			path = StaffMaking;
+			sourceTree = "<group>";
+		};
+		307B48FF17EDC0E4005D03C4 /* Author */ = {
+			isa = PBXGroup;
+			children = (
+				307B490017EDC10F005D03C4 /* HPAuthorViewController.h */,
+				307B490117EDC10F005D03C4 /* HPAuthorViewController.m */,
+				307B490217EDC10F005D03C4 /* HPAuthorViewController.xib */,
+			);
+			path = Author;
 			sourceTree = "<group>";
 		};
 		30A1AB7117E10A39006383A6 /* HPAlert */ = {
@@ -781,6 +805,7 @@
 				301454DB17D2664A00351CCF /* HPLoginViewController.xib in Resources */,
 				301454E017D2667A00351CCF /* HPSignupViewController.xib in Resources */,
 				301454E617D268F500351CCF /* nouser_female.png in Resources */,
+				307B490417EDC10F005D03C4 /* HPAuthorViewController.xib in Resources */,
 				301454E717D268F500351CCF /* nouser_male.jpg in Resources */,
 				301454F217D277C800351CCF /* HPMainPageViewController.xib in Resources */,
 				30AEF32917DE66A00082B8CC /* HPSettingsViewController.xib in Resources */,
@@ -845,6 +870,7 @@
 				302CD0D517C9069700561185 /* HelpMePlay.xcdatamodeld in Sources */,
 				302CD10617C951C000561185 /* Audio.m in Sources */,
 				302CD10717C951C000561185 /* Author.m in Sources */,
+				307B490317EDC10F005D03C4 /* HPAuthorViewController.m in Sources */,
 				302CD10817C951C000561185 /* Band.m in Sources */,
 				302CD10917C951C000561185 /* Composer.m in Sources */,
 				302CD10A17C951C000561185 /* MediaItem.m in Sources */,

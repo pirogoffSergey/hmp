@@ -11,6 +11,9 @@
 #import "HPLoginViewController.h"
 #import "HPNavBarElementsProducer.h"
 
+#import "HPBaseListViewController.h"
+#import "HPAuthorViewController.h"
+
 
 @interface HPMainPageViewController ()
 
@@ -54,9 +57,15 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+
 - (IBAction)authorsTapped:(id)sender
 {
+    HPBaseListViewController *list = [HPBaseListViewController new];
+    list.addActionBlock = ^(UIViewController *controller){
+        [controller.navigationController pushViewController:[HPAuthorViewController new] animated:YES];
+    };
     
+    [self.navigationController pushViewController:list animated:YES];
 }
 
 - (IBAction)playlistsTapped:(id)sender
