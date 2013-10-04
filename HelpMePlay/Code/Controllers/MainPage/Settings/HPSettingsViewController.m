@@ -42,19 +42,6 @@
 {
     [[HPRequestFactory sharedInstance] logout];
     [self closeButtonPressed:nil];
-    
-//    HPRequest *req = [[HPRequestFactory sharedInstance] getAuthorsWithToken:[HPDatabase currentUser].token authorID:@1];
-//
-//    req.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
-//
-//        NSLog(@"resp = %@", responseObject);
-//    };
-//
-//    req.failureBlock = ^(AFHTTPRequestOperation *operation, NSError *error){
-//        NSLog(@"err = %@", error);
-//    };
-//    
-//    [req start];
 }
 
 - (IBAction)userInfoPressed:(id)sender
@@ -67,6 +54,5 @@
 {
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
-
 
 @end

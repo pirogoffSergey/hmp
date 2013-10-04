@@ -34,7 +34,7 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password
 {
-    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.set]];
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APICommonMethods.set]];
     request.HTTPMethod = RequestMethods.post;
     [request addBody: @{
          @"name" :name,
@@ -46,11 +46,9 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password
 {
-   // HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.auth]];
-    HPRequest *request = [HPRequest new];
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.auth]];
     request.HTTPMethod = RequestMethods.post;
     [request addBody: @{
-        @"method"   :@"users.auth",
          @"login"   :login,
          @"password":password
      }];
@@ -75,7 +73,7 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)getUserInfoWithToken:(NSString *)token userID:(NSNumber *)userId
 {
-    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APIUserMethods.get]];
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APICommonMethods.get]];
     request.HTTPMethod = RequestMethods.get;
     [request addBody: @{
          @"token"   :token,
@@ -129,18 +127,6 @@ const struct RequestMethods RequestMethods = {
                         @"file":dataObj }];
     
     return request;
-    
-    
-//    HPRequest *request = [HPRequest new];
-//    request.HTTPMethod = RequestMethods.post;
-//    
-//    UIImage *image = [UIImage imageNamed:@"icon"];
-//    NSData *dataObj = UIImageJPEGRepresentation(image, 1.0);
-//    
-//    [request addBody: @{
-//     @"method":@"users.test",
-//     @"img":dataObj }];
-//    return request;
 }
 
 

@@ -15,23 +15,23 @@ const struct APIUrls APIUrls = {
 
 const struct APIGroups APIGroups = {
     .users = @"users",
-//    .usersGet = @"users.get",
-//    .usersAuth = @"users.auth",
-//    .usersIsLogged = @"users.isLogged",
+    .files = @"files",
+    .authors = @"authors",
+    .genres = @"genres",
+    .songs = @"songs",
 };
 
 
-//const struct APIGroups APIGroups = {
-//    .usersSet = @"users.set",
-//    .usersGet = @"users.get",
-//    .usersAuth = @"users.auth",
-//    .usersIsLogged = @"users.isLogged",
-//};
+
+const struct APICommonMethods APICommonMethods = {
+    .set = @"set",
+    .get = @"get",
+    .search = @"search",
+//    .isLogged = @"isLogged",
+};
 
 
 const struct APIUserMethods APIUserMethods = {
-    .set = @"set",
-    .get = @"get",
     .auth = @"auth",
     .isLogged = @"isLogged",
 };
