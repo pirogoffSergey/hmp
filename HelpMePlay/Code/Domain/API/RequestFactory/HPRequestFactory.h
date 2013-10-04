@@ -27,7 +27,11 @@ extern const struct RequestMethods {
 - (HPRequest *)logout;
 - (HPRequest *)getUserInfoWithToken:(NSString *)token userID:(NSNumber *)userId;
 
+//authors
+- (HPRequest *)getAuthorsWithToken:(NSString *)token authorID:(NSNumber *)userId;
 
-- (HPRequest *)sendPic;
+
+- (HPRequest *)getPic:(User *)usr;
+- (HPRequest *)sendPic:(User *)usr;
 
 @end

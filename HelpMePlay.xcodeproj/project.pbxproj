@@ -185,6 +185,7 @@
 		307B490C17EDE224005D03C4 /* default_song_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_song_cover.jpg; sourceTree = "<group>"; };
 		307B495A17EE4770005D03C4 /* HPSimpleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSimpleDataSource.h; sourceTree = "<group>"; };
 		307B495B17EE4770005D03C4 /* HPSimpleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSimpleDataSource.m; sourceTree = "<group>"; };
+		30983E5B17FF4B1400CC5946 /* HPSelfSetupedMappingObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSelfSetupedMappingObjectProtocol.h; sourceTree = "<group>"; };
 		30A1AB7217E10A59006383A6 /* HPAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAlert.h; sourceTree = "<group>"; };
 		30A1AB7317E10A59006383A6 /* HPAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAlert.m; sourceTree = "<group>"; };
 		30A1AB7617E10DA5006383A6 /* HPNavBarElementsProducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPNavBarElementsProducer.h; sourceTree = "<group>"; };
@@ -540,6 +541,7 @@
 				30FD24A017D7E7BE006894A5 /* BaseMapper */,
 				30FD249F17D7E7A1006894A5 /* HPMapperProtocol.h */,
 				30FD24A417D7E958006894A5 /* HPMappingObjectProtocol.h */,
+				30983E5B17FF4B1400CC5946 /* HPSelfSetupedMappingObjectProtocol.h */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";

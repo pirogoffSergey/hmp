@@ -86,21 +86,61 @@ const struct RequestMethods RequestMethods = {
 }
 
 
+// --------------
+
+- (HPRequest *)getAuthorsWithToken:(NSString *)token authorID:(NSNumber *)authID
+{
+    HPRequest *request = [[HPRequest alloc] initWithURL:@"authors/get"];
+    request.HTTPMethod = RequestMethods.get;
+    [request addBody: @{
+                        @"token"   :token,
+                        @"id"      :authID,
+                        }];
+    
+    return request;
+}
+
+
 
 // --------------
 
-- (HPRequest *)sendPic
+- (HPRequest *)getPic:(User *)usr
 {
-    HPRequest *request = [HPRequest new];
+    HPRequest *request = [[HPRequest alloc] initWithURL:@"files/get"];
+    request.HTTPMethod = RequestMethods.get;
+    
+    [request addBody: @{
+                        @"token":usr.token,
+                        @"id":@2 }];
+    
+    return request;
+}
+
+- (HPRequest *)sendPic:(User *)usr
+{
+    HPRequest *request = [[HPRequest alloc] initWithURL:@"files/upload"];
     request.HTTPMethod = RequestMethods.post;
     
     UIImage *image = [UIImage imageNamed:@"icon"];
     NSData *dataObj = UIImageJPEGRepresentation(image, 1.0);
     
     [request addBody: @{
-     @"method":@"users.test",
-     @"img":dataObj }];
+                        @"token":usr.token,
+                        @"file":dataObj }];
+    
     return request;
+    
+    
+//    HPRequest *request = [HPRequest new];
+//    request.HTTPMethod = RequestMethods.post;
+//    
+//    UIImage *image = [UIImage imageNamed:@"icon"];
+//    NSData *dataObj = UIImageJPEGRepresentation(image, 1.0);
+//    
+//    [request addBody: @{
+//     @"method":@"users.test",
+//     @"img":dataObj }];
+//    return request;
 }
 
 

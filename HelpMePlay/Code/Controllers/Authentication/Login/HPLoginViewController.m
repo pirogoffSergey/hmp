@@ -100,35 +100,23 @@
         HPBaseMapper *mapper = [HPBaseMapper new];
         HPBaseResponseObject *obj = [mapper mapFromData:responseObject withModel:[HPBaseResponseObject class]];
         
-        
         User *currentUser = [HPDatabase currentUser];
         if(!currentUser) {
             currentUser = [HPDatabase createUser];
         }
+        
+        [currentUser setupWithDictionary:responseObject];
         currentUser.token = obj.additionalField;
-        currentUser.uid = [NSNumber numberWithInt:obj._id];
         
+        NSLog(@"token = %@", currentUser.token);
         
-        //after this. need to send "users.get" to get all info about user (pic, name, etc)
-//        HPRequest *getUserInfo = [self getUserInfoRequest:currentUser.token userID:currentUser.uid];
-//        [getUserInfo start];
         
         [HPDatabase saveDataBase];
         [self closeButtonPressed:nil];
-        [HPAlert showSuccesMessage:@"Hello, user"];
+        
+        NSString *userName = (currentUser.name) ? currentUser.name : currentUser.login;
+        [HPAlert showSuccesMessage:[NSString stringWithFormat:@"Hello, %@", userName]];
     };
-    
-    return request;
-}
-
-- (HPRequest *)getUserInfoRequest:(NSString *)token userID:(NSNumber *)userId
-{
-    NSParameterAssert(token);
-    NSParameterAssert(userId);
-    
-    HPRequest *request = [[HPRequestFactory sharedInstance] getUserInfoWithToken:token userID:userId];
-    
-    //add success handler
     
     return request;
 }
