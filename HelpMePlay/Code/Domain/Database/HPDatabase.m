@@ -57,6 +57,13 @@
     return creator.createdEntityObject;
 }
 
++ (User *)createUserWithDictionary:(NSDictionary *)dict
+{
+    User *newUser = [HPDatabase createUser];
+    [newUser setupWithDictionary:dict];
+    return newUser;
+}
+
 
 + (NSArray *)songs
 {

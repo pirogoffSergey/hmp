@@ -16,6 +16,7 @@
 + (User *)currentUser;
 + (void)restoreCurrentUser;
 + (User *)createUser;
++ (User *)createUserWithDictionary:(NSDictionary *)dict;
 
 + (NSArray *)allAuthors;
 

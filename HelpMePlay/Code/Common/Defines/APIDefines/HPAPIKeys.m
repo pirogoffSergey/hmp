@@ -19,4 +19,5 @@ const struct APIUserKeys APIUserKeys = {
     .login = @"login",
     .name = @"name",
     .avatar = @"avatar",
+    .token = @"token",
 };

@@ -11,14 +11,18 @@
 
 - (void)setupWithDictionary:(NSDictionary *)aDictionary
 {
-    NSDictionary *userDict = [aDictionary valueForKey:APIUserKeys.user];
+    if(aDictionary) {
     
-    self.uid =  [NSNumber numberWithInt: ((NSString *)[userDict valueForKey:APICommonKeys.id_]).integerValue];
-    self.login = [userDict valueForKey:APIUserKeys.login];
-    self.name = [userDict valueForKey:APIUserKeys.name];
-    
-//    id userpic = [userDict valueForKey:APIUserKeys.avatar];
-    //self.userpic = [userDict valueForKey:@"name"];
+        NSDictionary *userDict = [aDictionary valueForKey:APIUserKeys.user];
+        
+        self.token = [aDictionary valueForKey:APIUserKeys.token];
+        self.uid =  [NSNumber numberWithInt: ((NSString *)[userDict valueForKey:APICommonKeys.id_]).integerValue];
+        self.login = [userDict valueForKey:APIUserKeys.login];
+        self.name = [userDict valueForKey:APIUserKeys.name];
+        
+    //    id userpic = [userDict valueForKey:APIUserKeys.avatar];
+        //self.userpic = [userDict valueForKey:@"name"];
+    }
 }
 
 

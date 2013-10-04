@@ -97,22 +97,16 @@
     HPRequest *request = [[HPRequestFactory sharedInstance] loginWithLogin:self.loginField.text password:self.passwordField.text];
     
     request.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
-        HPBaseMapper *mapper = [HPBaseMapper new];
-        HPBaseResponseObject *obj = [mapper mapFromData:responseObject withModel:[HPBaseResponseObject class]];
         
         User *currentUser = [HPDatabase currentUser];
         if(!currentUser) {
             currentUser = [HPDatabase createUser];
         }
-        
         [currentUser setupWithDictionary:responseObject];
-        currentUser.token = obj.additionalField;
-        
-        NSLog(@"token = %@", currentUser.token);
-        
         
         [HPDatabase saveDataBase];
         [self closeButtonPressed:nil];
+        NSLog(@"token = %@", currentUser.token);
         
         NSString *userName = (currentUser.name) ? currentUser.name : currentUser.login;
         [HPAlert showSuccesMessage:[NSString stringWithFormat:@"Hello, %@", userName]];

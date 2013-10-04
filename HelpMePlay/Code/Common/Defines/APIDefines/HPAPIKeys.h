@@ -19,5 +19,6 @@ extern const struct APIUserKeys {
     __unsafe_unretained NSString *login;
     __unsafe_unretained NSString *name;
     __unsafe_unretained NSString *avatar;
+    __unsafe_unretained NSString *token;
 } APIUserKeys;
 
