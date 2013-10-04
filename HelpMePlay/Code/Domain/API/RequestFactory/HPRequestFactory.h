@@ -23,6 +23,7 @@ extern const struct RequestMethods {
 
 //user
 - (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password;
+- (HPRequest *)changeUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password token:(NSString *)token;
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password;
 - (HPRequest *)isLogged:(NSString *)token;
 - (HPRequest *)logout;
@@ -31,8 +32,8 @@ extern const struct RequestMethods {
 //authors
 - (HPRequest *)getAuthorsWithToken:(NSString *)token authorID:(NSNumber *)userId;
 
-
-- (HPRequest *)getPic:(User *)usr;
-- (HPRequest *)sendPic:(User *)usr;
+//images
+- (HPRequest *)getPicWithID:(NSNumber *)picID token:(NSString *)token;
+- (HPRequest *)sendPic:(UIImage *)pic withToken:(NSString *)token;
 
 @end

@@ -52,7 +52,13 @@
 
 - (void)addBody:(NSDictionary *)body
 {
-    self.body = body;
+    if(!self.body) {
+        self.body = @{};
+    }
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithDictionary:self.body];
+    [mutableDict addEntriesFromDictionary:body];
+    
+    self.body = [NSDictionary dictionaryWithDictionary:mutableDict];    
 }
 
 - (void)start

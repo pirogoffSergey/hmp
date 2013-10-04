@@ -34,15 +34,32 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password
 {
+//    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APICommonMethods.set]];
+//    request.HTTPMethod = RequestMethods.post;
+//    [request addBody: @{
+//         @"name" :name,
+//         @"login":login,
+//         @"password":password
+//     }];
+    return [self changeUserWithName:name login:login password:password token:nil];
+}
+
+- (HPRequest *)changeUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password token:(NSString *)token
+{
     HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APICommonMethods.set]];
     request.HTTPMethod = RequestMethods.post;
     [request addBody: @{
-         @"name" :name,
-         @"login":login,
-         @"password":password
-     }];
+                        @"name" :name,
+                        @"login":login,
+                        @"password":password
+    }];
+    
+    if(token && token.length) {
+        [request addBody:@{@"token":token}];
+    }
     return request;
 }
+
 
 - (HPRequest *)loginWithLogin:(NSString *)login password:(NSString *)password
 {
@@ -102,30 +119,26 @@ const struct RequestMethods RequestMethods = {
 
 // --------------
 
-- (HPRequest *)getPic:(User *)usr
+- (HPRequest *)getPicWithID:(NSNumber *)picID token:(NSString *)token
 {
-    HPRequest *request = [[HPRequest alloc] initWithURL:@"files/get"];
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForFilesMethods:APICommonMethods.get]];
     request.HTTPMethod = RequestMethods.get;
     
     [request addBody: @{
-                        @"token":usr.token,
-                        @"id":@2 }];
-    
+                        @"token":token,
+                        @"id":picID }];
     return request;
 }
 
-- (HPRequest *)sendPic:(User *)usr
+- (HPRequest *)sendPic:(UIImage *)pic withToken:(NSString *)token
 {
-    HPRequest *request = [[HPRequest alloc] initWithURL:@"files/upload"];
+    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForFilesMethods:APIFilesMethods.upload]];
     request.HTTPMethod = RequestMethods.post;
     
-    UIImage *image = [UIImage imageNamed:@"icon"];
-    NSData *dataObj = UIImageJPEGRepresentation(image, 1.0);
-    
+    NSData *dataObj = UIImageJPEGRepresentation(pic, 1.0);
     [request addBody: @{
-                        @"token":usr.token,
+                        @"token":token,
                         @"file":dataObj }];
-    
     return request;
 }
 
@@ -137,6 +150,12 @@ const struct RequestMethods RequestMethods = {
 {
     return [NSString stringWithFormat:@"%@/%@", APIGroups.users, subPath];
 }
+
+- (NSString *)pathForFilesMethods:(NSString *)subPath
+{
+    return [NSString stringWithFormat:@"%@/%@", APIGroups.files, subPath];
+}
+
 
 - (BOOL)isClearString:(NSString *)string
 {

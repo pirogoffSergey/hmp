@@ -24,6 +24,8 @@
 @property (nonatomic, strong) FDTakeController *takePhotoController;
 
 @property (nonatomic, strong) User *userForContent;
+@property (nonatomic, strong) NSString *login;
+@property (nonatomic, strong) NSString *pass;
 
 @end
 
@@ -99,7 +101,10 @@
     if([self isFieldsDataValid]) {
 
         //send request
-        HPRequest *request = [self requestForSighUp];
+        self.login = self.loginField.text;
+        self.pass = self.passwordField.text;
+        
+        HPRequest *request = (self.userForContent) ? [self changeInfoRequest] : [self sighUpRequest];
         [request start];
     }
 }
@@ -130,6 +135,64 @@
 
 
 #pragma mark -
+#pragma mark Requests
+
+- (HPRequest *)sighUpRequest
+{
+    HPRequest *request = [[HPRequestFactory sharedInstance] createUserWithName:self.nameField.text
+                                                                         login:self.loginField.text
+                                                                      password:self.passwordField.text];
+    request.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
+        HPRequest *loginRequest = [self loginRequest];
+        [loginRequest start];
+    };
+    return request;
+}
+
+- (HPRequest *)loginRequest
+{
+    HPRequest *request = [[HPRequestFactory sharedInstance] loginWithLogin:self.login password:self.pass];
+    
+    request.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
+        
+        User *currentUser = [HPDatabase currentUser];
+        if(!currentUser) {
+            currentUser = [HPDatabase createUser];
+        }
+        [currentUser setupWithDictionary:responseObject];
+        
+        [HPDatabase saveDataBase];
+        [self.navigationController dismissModalViewControllerAnimated:YES];
+        NSLog(@"token = %@", currentUser.token);
+        
+        NSString *userName = (currentUser.name) ? currentUser.name : currentUser.login;
+        [HPAlert showSuccesMessage:[NSString stringWithFormat:@"Welcome, %@", userName]];
+    };
+    
+    return request;
+}
+
+- (HPRequest *)changeInfoRequest
+{
+    HPRequest *request = [[HPRequestFactory sharedInstance] changeUserWithName:self.nameField.text
+                                                                         login:self.loginField.text
+                                                                      password:self.passwordField.text
+                                                                         token:self.userForContent.token];
+    
+    request.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
+        
+        User *currentUser = [HPDatabase currentUser];
+        currentUser.login = self.login;
+        currentUser.name = self.nameField.text;
+        [HPDatabase saveDataBase];
+        
+        [HPAlert showSuccesMessage:@"Your personal info changed successfully"];
+    };
+    return request;
+}
+
+
+#pragma mark -
 #pragma mark Helpers
 
 - (BOOL)isFieldsDataValid
@@ -138,19 +201,6 @@
     validator.textFields = @[self.nameField, self.loginField, self.passwordField];
     [validator reach];
     return validator.checkingResult;
-}
-
-- (HPRequest *)requestForSighUp
-{
-    HPRequest *request = [[HPRequestFactory sharedInstance] createUserWithName:self.nameField.text
-                                                                         login:self.loginField.text
-                                                                      password:self.passwordField.text];
-    request.successBlock = ^(AFHTTPRequestOperation *operation, id responseObject){
-        HPBaseMapper *mapper = [HPBaseMapper new];
-        HPBaseResponseObject *object = [mapper mapFromData:responseObject withModel:[HPBaseResponseObject class]];
-    };
-    
-    return request;
 }
 
 - (UIImage *)randNoUserpicImage
