@@ -7,9 +7,7 @@
 //
 
 #import "HPBaseResponseObject.h"
-
-static NSString *const kID = @"id";
-static NSString *const kErrorCode = @"error_code";
+#import "HPAPIKeys.h"
 
 
 @implementation HPBaseResponseObject
@@ -17,9 +15,9 @@ static NSString *const kErrorCode = @"error_code";
 + (id)createWithDictionary:(NSDictionary *)aDictionary
 {
     HPBaseResponseObject *obj = [HPBaseResponseObject new];
-    obj._id = ((NSNumber *)[aDictionary valueForKey:kID]).integerValue;
-    obj.errorCode = ((NSNumber *)[aDictionary valueForKey:kErrorCode]).integerValue;
-    obj.additionalField = [HPBaseResponseObject getAdditionals:aDictionary alreadyExistKeys:@[kID, kErrorCode]];
+    obj._id = ((NSNumber *)[aDictionary valueForKey:APICommonKeys.id_]).integerValue;
+    obj.errorCode = ((NSNumber *)[aDictionary valueForKey:APICommonKeys.errorCode]).integerValue;
+    obj.additionalField = [HPBaseResponseObject getAdditionals:aDictionary alreadyExistKeys:@[APICommonKeys.id_, APICommonKeys.errorCode]];
     return obj;
 }
 

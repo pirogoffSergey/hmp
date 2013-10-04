@@ -1,28 +1,23 @@
 #import "User.h"
+#import "HPAPIKeys.h"
 
 
 @interface User ()
 @end
 
 
-static NSString *const kUser = @"user";
-static NSString *const kID = @"id";
-static NSString *const kLogin = @"login";
-static NSString *const kName = @"name";
-static NSString *const kUserPic = @"avatar";
-
 
 @implementation User
 
 - (void)setupWithDictionary:(NSDictionary *)aDictionary
 {
-    NSDictionary *userDict = [aDictionary valueForKey:kUser];
+    NSDictionary *userDict = [aDictionary valueForKey:APIUserKeys.user];
     
-    self.uid =  [NSNumber numberWithInt: ((NSString *)[userDict valueForKey:kID]).integerValue];
-    self.login = [userDict valueForKey:kLogin];
-    self.name = [userDict valueForKey:kName];
+    self.uid =  [NSNumber numberWithInt: ((NSString *)[userDict valueForKey:APICommonKeys.id_]).integerValue];
+    self.login = [userDict valueForKey:APIUserKeys.login];
+    self.name = [userDict valueForKey:APIUserKeys.name];
     
-//    id userpic = [userDict valueForKey:kUserPic];
+//    id userpic = [userDict valueForKey:APIUserKeys.avatar];
     //self.userpic = [userDict valueForKey:@"name"];
 }
 

@@ -27,7 +27,6 @@ const struct APICommonMethods APICommonMethods = {
     .set = @"set",
     .get = @"get",
     .search = @"search",
-//    .isLogged = @"isLogged",
 };
 
 
@@ -35,3 +34,14 @@ const struct APIUserMethods APIUserMethods = {
     .auth = @"auth",
     .isLogged = @"isLogged",
 };
+
+
+const struct APIFilesMethods APIFilesMethods = {
+    .upload = @"upload",
+};
+
+
+
+
+
+

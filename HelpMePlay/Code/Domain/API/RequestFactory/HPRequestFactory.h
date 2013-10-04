@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HPAPIDefines.h"
+#import "HPAPIKeys.h"
 #import "HPRequest.h"
 
 extern const struct RequestMethods {

@@ -36,3 +36,9 @@ extern const struct APIUserMethods {
     __unsafe_unretained NSString *auth;
     __unsafe_unretained NSString *isLogged;
 } APIUserMethods;
+
+
+extern const struct APIFilesMethods {
+    __unsafe_unretained NSString *upload;
+} APIFilesMethods;
+
