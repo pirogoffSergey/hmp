@@ -12,7 +12,7 @@
 
 @interface HPAlert : NSObject
 
-+ (void)showSuccesMessage:(NSString *)message;
-+ (void)showErroMessage:(NSString *)message;
++ (void)showSuccesMessage:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
++ (void)showErroMessage:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 
 @end

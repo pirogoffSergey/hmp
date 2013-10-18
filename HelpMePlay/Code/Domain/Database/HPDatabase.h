@@ -20,5 +20,6 @@
 
 + (NSArray *)allAuthors;
 + (NSArray *)allGenres;
++ (NSArray *)genreWithName:(NSString *)name;
 
 @end

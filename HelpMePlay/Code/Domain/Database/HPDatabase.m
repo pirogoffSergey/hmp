@@ -83,9 +83,19 @@
 
 + (NSArray *)allGenres
 {
+    return [HPDatabase genreWithName:nil];
+}
+
++ (NSArray *)genreWithName:(NSString *)name
+{
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[Genre entityName]];
+    if(name) {
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
+    }
+
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:GenreAttributes.name ascending:YES]];
     return [[HPDataBaseHelper sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+
 }
 
 

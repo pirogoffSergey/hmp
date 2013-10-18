@@ -36,6 +36,11 @@
         return;
     }
     
+    if([self isAlreadyHaveGenreWithName:self.nameTextField.text]) {
+        [HPAlert showErroMessage:@"Genre \"%@\" is already exists", self.nameTextField.text];
+        return;
+    }
+    
     [self createNewGenreWithName:self.nameTextField.text];
     
     RESIGN_ALL;
@@ -45,6 +50,12 @@
 
 #pragma mark -
 #pragma mark Helpers
+
+- (Genre *)isAlreadyHaveGenreWithName:(NSString *)name
+{
+    NSArray *fetchResults = [HPDatabase genreWithName:self.nameTextField.text];
+    return [fetchResults lastObject];
+}
 
 - (Genre *)createNewGenreWithName:(NSString *)name
 {
