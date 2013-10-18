@@ -89,6 +89,7 @@
 		30D19B9A18119D8000BC9620 /* HPGenreAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D19B9818119D8000BC9620 /* HPGenreAddViewController.xib */; };
 		30D19B9E1811A03600BC9620 /* NSString+EmptyStringChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9D1811A03600BC9620 /* NSString+EmptyStringChecker.m */; };
 		30D19BA21811A35E00BC9620 /* UITextField+EmptyChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19BA11811A35E00BC9620 /* UITextField+EmptyChecker.m */; };
+		30D19BA71811A95800BC9620 /* HPPickerViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19BA61811A95800BC9620 /* HPPickerViewHandler.m */; };
 		30FAAEE517C9618C00299126 /* HPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE117C9618C00299126 /* HPRequest.m */; };
 		30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE417C9618C00299126 /* HPRequestFactory.m */; };
 		30FAAEED17C9619A00299126 /* HPDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEEB17C9619A00299126 /* HPDefines.m */; };
@@ -221,6 +222,8 @@
 		30D19B9D1811A03600BC9620 /* NSString+EmptyStringChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EmptyStringChecker.m"; sourceTree = "<group>"; };
 		30D19BA01811A35E00BC9620 /* UITextField+EmptyChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+EmptyChecker.h"; sourceTree = "<group>"; };
 		30D19BA11811A35E00BC9620 /* UITextField+EmptyChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+EmptyChecker.m"; sourceTree = "<group>"; };
+		30D19BA51811A95800BC9620 /* HPPickerViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPickerViewHandler.h; sourceTree = "<group>"; };
+		30D19BA61811A95800BC9620 /* HPPickerViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPickerViewHandler.m; sourceTree = "<group>"; };
 		30FAAEE017C9618C00299126 /* HPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequest.h; sourceTree = "<group>"; };
 		30FAAEE117C9618C00299126 /* HPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRequest.m; sourceTree = "<group>"; };
 		30FAAEE317C9618C00299126 /* HPRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequestFactory.h; sourceTree = "<group>"; };
@@ -481,6 +484,7 @@
 		3057688417C8F23100000BAE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				30D19BA31811A93700BC9620 /* Handlers */,
 				30FD249A17D7E6DC006894A5 /* Categories */,
 				30FAAEE717C9619A00299126 /* Defines */,
 				3057688517C8F23100000BAE /* Helpers */,
@@ -792,6 +796,23 @@
 			path = TextFieldEmptyCheck;
 			sourceTree = "<group>";
 		};
+		30D19BA31811A93700BC9620 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				30D19BA41811A93F00BC9620 /* PickerViewHandler */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		30D19BA41811A93F00BC9620 /* PickerViewHandler */ = {
+			isa = PBXGroup;
+			children = (
+				30D19BA51811A95800BC9620 /* HPPickerViewHandler.h */,
+				30D19BA61811A95800BC9620 /* HPPickerViewHandler.m */,
+			);
+			path = PickerViewHandler;
+			sourceTree = "<group>";
+		};
 		30FAAEDF17C9618C00299126 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -1024,6 +1045,7 @@
 				30FD249E17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m in Sources */,
 				30FD24A317D7E7D4006894A5 /* HPBaseMapper.m in Sources */,
 				30BEDDE517DD0CB6003D2C8E /* HPBaseResponseObject.m in Sources */,
+				30D19BA71811A95800BC9620 /* HPPickerViewHandler.m in Sources */,
 				30BEDDE917DD1A28003D2C8E /* HPEntityCreator.m in Sources */,
 				30AEF32817DE66A00082B8CC /* HPSettingsViewController.m in Sources */,
 				30A1AB7417E10A59006383A6 /* HPAlert.m in Sources */,

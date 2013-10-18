@@ -7,7 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HPAddSongViewController">
             <connections>
+                <outlet property="authorTextField" destination="SFW-TR-Chu" id="h3l-jI-YbZ"/>
+                <outlet property="genreTextField" destination="0SI-Hf-kqc" id="Q7e-e4-9gD"/>
                 <outlet property="someview" destination="igI-DN-Pwu" id="dj7-7N-Aog"/>
+                <outlet property="titleTextField" destination="Ilw-cE-gmw" id="Fsw-ty-3Pq"/>
                 <outlet property="view" destination="1" id="115-64-vyg"/>
             </connections>
         </placeholder>
@@ -26,40 +29,61 @@
                             <state key="normal" title="Button" image="default_song_cover.jpg">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="changePicButtonPressed:" destination="-1" eventType="touchUpInside" id="ka9-di-Oko"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" id="sbV-n1-eYg" userLabel="title View">
                             <rect key="frame" x="0.0" y="125" width="320" height="117"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="SFW-TR-Chu" userLabel="auth Round Style Text Field">
-                                    <rect key="frame" x="82" y="20" width="218" height="30"/>
+                                    <rect key="frame" x="82" y="8" width="218" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="7rn-zb-G4Y"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KAA-e7-Lzr">
-                                    <rect key="frame" x="12" y="19" width="62" height="30"/>
+                                    <rect key="frame" x="12" y="8" width="62" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Gq-tO-Vlx">
-                                    <rect key="frame" x="12" y="67" width="62" height="30"/>
+                                    <rect key="frame" x="12" y="44" width="62" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Ilw-cE-gmw" userLabel="title Round Style Text Field">
-                                    <rect key="frame" x="82" y="67" width="218" height="30"/>
+                                    <rect key="frame" x="82" y="44" width="218" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="jb4-is-Z2P"/>
+                                    </connections>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="0SI-Hf-kqc" userLabel="title Round Style Text Field">
+                                    <rect key="frame" x="82" y="81" width="218" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wfQ-sR-v7E">
+                                    <rect key="frame" x="12" y="81" width="62" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.24313727020000001" blue="0.2117647231" alpha="1" colorSpace="deviceRGB"/>
                         </view>
                         <view contentMode="scaleToFill" id="igI-DN-Pwu" userLabel="lyrics View">
-                            <rect key="frame" x="0.0" y="242" width="320" height="94"/>
+                            <rect key="frame" x="0.0" y="242" width="320" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="q67-Xn-vfh" customClass="SDSegmentedControl">

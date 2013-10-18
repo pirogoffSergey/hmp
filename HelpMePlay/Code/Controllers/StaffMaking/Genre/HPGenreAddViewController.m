@@ -8,7 +8,6 @@
 
 #import "HPGenreAddViewController.h"
 #import "HPEntityCreator.h"
-
 #import "Genre.h"
 
 
@@ -27,6 +26,9 @@
 }
 
 
+#pragma mark -
+#pragma mark Actions
+
 - (IBAction)addPressed:(id)sender
 {
     if([self.nameTextField isTextFieldEmpty]) {
@@ -34,16 +36,27 @@
         return;
     }
     
+    [self createNewGenreWithName:self.nameTextField.text];
+    
+    RESIGN_ALL;
+    [HPAlert showSuccesMessage:@"Done"];
+}
+
+
+#pragma mark -
+#pragma mark Helpers
+
+- (Genre *)createNewGenreWithName:(NSString *)name
+{
     HPEntityCreator *entityCreator = [HPEntityCreator new];
     entityCreator.entityClass = [Genre class];
     [entityCreator reach];
     
     Genre *newGenre = entityCreator.createdEntityObject;
-    newGenre.name = self.nameTextField.text;
-    
+    newGenre.name = name;
     [HPDatabase saveDataBase];
-    RESIGN_ALL;
-    [HPAlert showSuccesMessage:@"Done"];
+    
+    return newGenre;
 }
 
 @end
