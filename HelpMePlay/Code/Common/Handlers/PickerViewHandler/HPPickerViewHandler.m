@@ -43,7 +43,10 @@ static CGFloat cSectionWidth = 300;
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     id recordToPresent = self.records[row];
-    NSLog(@"selected %@", recordToPresent);
+    
+    if(self.itemSelectedBlock) {
+        self.itemSelectedBlock(recordToPresent);
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)componen

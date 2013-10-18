@@ -51,6 +51,10 @@
     self.pickerManager = [HPPickerViewHandler new];
     self.pickerManager.records = @[@"rec1", @"rec2", @"recNn"];
     self.pickerManager.picker = myPickerView;
+    
+    self.pickerManager.itemSelectedBlock = ^(id selectedItem) {
+        NSLog(@"selected %@", selectedItem);
+    };
 }
 
 

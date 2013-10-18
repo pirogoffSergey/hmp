@@ -37,7 +37,7 @@
     [self setupTableView];
     [self setupDataSource];
     [self setupAddButton];
-    self.view.backgroundColor = [UIColor greenColor];
+    self.view.backgroundColor = [UIColor colorWithRed:55/255.0 green:204/255.0 blue:143/255.0 alpha:1];
 }
 
 - (void)setupTableView

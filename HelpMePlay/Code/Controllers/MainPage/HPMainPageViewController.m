@@ -16,6 +16,7 @@
 #import "HPAuthorViewController.h"
 #import "HPAddSongViewController.h"
 #import "HPGenreAddViewController.h"
+#import "HPGenreListViewController.h"
 
 
 @interface HPMainPageViewController ()
@@ -107,20 +108,14 @@
 
 - (HPBaseListViewController *)genresList
 {
-    HPBaseListViewController *list = [HPBaseListViewController new];
-    list.title = @"genres";
+    HPGenreListViewController *list = [HPGenreListViewController new];
     HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
     dataSource.reloadBlock = ^{
         return [HPDatabase allGenres];
     };
     list.dataSource = dataSource;
-    
-    list.addActionBlock = ^(UIViewController *controller){
-        [controller.navigationController pushViewController:[HPGenreAddViewController new] animated:YES];
-    };
     return list;
 }
-
 
 @end
 
