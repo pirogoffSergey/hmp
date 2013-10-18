@@ -10,11 +10,12 @@
 #import "HPSettingsViewController.h"
 #import "HPLoginViewController.h"
 #import "HPNavBarElementsProducer.h"
-
 #import "HPBaseListViewController.h"
+#import "HPSimpleDataSource.h"
+
 #import "HPAuthorViewController.h"
 #import "HPAddSongViewController.h"
-#import "HPSimpleDataSource.h"
+#import "HPGenreAddViewController.h"
 
 
 @interface HPMainPageViewController ()
@@ -72,7 +73,7 @@
 
 - (IBAction)genresTapped:(id)sender
 {
-    
+    [self.navigationController pushViewController:[self genresList] animated:YES];
 }
 
 - (IBAction)allSongsTapped:(id)sender
@@ -91,7 +92,7 @@
 - (HPBaseListViewController *)authorsList
 {
     HPBaseListViewController *list = [HPBaseListViewController new];
-    list.title = @"TILE";
+    list.title = @"authors";
     HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
     dataSource.reloadBlock = ^{
         return [HPDatabase allAuthors];
@@ -103,6 +104,23 @@
     };
     return list;
 }
+
+- (HPBaseListViewController *)genresList
+{
+    HPBaseListViewController *list = [HPBaseListViewController new];
+    list.title = @"genres";
+    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
+    dataSource.reloadBlock = ^{
+        return [HPDatabase allGenres];
+    };
+    list.dataSource = dataSource;
+    
+    list.addActionBlock = ^(UIViewController *controller){
+        [controller.navigationController pushViewController:[HPGenreAddViewController new] animated:YES];
+    };
+    return list;
+}
+
 
 @end
 

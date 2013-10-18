@@ -13,3 +13,6 @@
 
 #import "HPDatabase.h"
 #import "HPAlert.h"
+
+#import "NSString+EmptyStringChecker.h"
+#import "UITextField+EmptyChecker.h"

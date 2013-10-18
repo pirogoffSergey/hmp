@@ -6,7 +6,6 @@
 const struct RecordAttributes RecordAttributes = {
 	.accords = @"accords",
 	.cover = @"cover",
-	.genre = @"genre",
 	.lyrics = @"lyrics",
 	.name = @"name",
 	.uid = @"uid",
@@ -14,6 +13,7 @@ const struct RecordAttributes RecordAttributes = {
 
 const struct RecordRelationships RecordRelationships = {
 	.composer = @"composer",
+	.genre = @"genre",
 	.relatedMedia = @"relatedMedia",
 };
 
@@ -72,13 +72,6 @@ const struct RecordFetchedProperties RecordFetchedProperties = {
 
 
 
-@dynamic genre;
-
-
-
-
-
-
 @dynamic lyrics;
 
 
@@ -130,6 +123,10 @@ const struct RecordFetchedProperties RecordFetchedProperties = {
 	[self didAccessValueForKey:@"composer"];
 	return result;
 }
+	
+
+@dynamic genre;
+
 	
 
 @dynamic relatedMedia;

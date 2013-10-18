@@ -16,6 +16,10 @@
         </attribute>
         <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="Genre" representedClassName="Genre" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="MediaItem" representedClassName="MediaItem" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
@@ -37,11 +41,11 @@
                 <entry key="attributeValueClassName" value="UIImage"/>
             </userInfo>
         </attribute>
-        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lyrics" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="composer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Composer" syncable="YES"/>
+        <relationship name="genre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Genre" syncable="YES"/>
         <relationship name="relatedMedia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MediaItem" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
@@ -58,15 +62,16 @@
     </entity>
     <entity name="Video" representedClassName="Video" parentEntity="MediaItem" syncable="YES"/>
     <elements>
-        <element name="Audio" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Author" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Band" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Composer" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MediaItem" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MediaLinks" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Playlist" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Record" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Video" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Audio" positionX="-45" positionY="-36" width="128" height="45"/>
+        <element name="Author" positionX="61" positionY="150" width="128" height="75"/>
+        <element name="Band" positionX="-110" positionY="144" width="128" height="45"/>
+        <element name="Composer" positionX="126" positionY="-0" width="128" height="105"/>
+        <element name="MediaItem" positionX="7" positionY="-252" width="128" height="75"/>
+        <element name="MediaLinks" positionX="-252" positionY="-126" width="128" height="45"/>
+        <element name="Playlist" positionX="-72" positionY="270" width="128" height="90"/>
+        <element name="Record" positionX="268" positionY="-216" width="128" height="163"/>
+        <element name="User" positionX="-288" positionY="189" width="128" height="135"/>
+        <element name="Video" positionX="-218" positionY="-27" width="128" height="45"/>
+        <element name="Genre" positionX="432" positionY="-216" width="128" height="73"/>
     </elements>
 </model>

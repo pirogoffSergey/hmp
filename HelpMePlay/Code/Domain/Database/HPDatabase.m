@@ -12,6 +12,7 @@
 #import "HPEntityCreator.h"
 
 #import "Author.h"
+#import "Genre.h"
 
 
 @implementation HPDatabase
@@ -77,6 +78,13 @@
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[Author entityName]];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:ComposerAttributes.name ascending:YES]];
+    return [[HPDataBaseHelper sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+}
+
++ (NSArray *)allGenres
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[Genre entityName]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:GenreAttributes.name ascending:YES]];
     return [[HPDataBaseHelper sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
 }
 

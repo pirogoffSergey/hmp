@@ -19,5 +19,6 @@
 + (User *)createUserWithDictionary:(NSDictionary *)dict;
 
 + (NSArray *)allAuthors;
++ (NSArray *)allGenres;
 
 @end

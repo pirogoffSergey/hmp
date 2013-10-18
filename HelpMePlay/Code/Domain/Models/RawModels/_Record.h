@@ -7,7 +7,6 @@
 extern const struct RecordAttributes {
 	__unsafe_unretained NSString *accords;
 	__unsafe_unretained NSString *cover;
-	__unsafe_unretained NSString *genre;
 	__unsafe_unretained NSString *lyrics;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *uid;
@@ -15,6 +14,7 @@ extern const struct RecordAttributes {
 
 extern const struct RecordRelationships {
 	__unsafe_unretained NSString *composer;
+	__unsafe_unretained NSString *genre;
 	__unsafe_unretained NSString *relatedMedia;
 } RecordRelationships;
 
@@ -22,11 +22,11 @@ extern const struct RecordFetchedProperties {
 } RecordFetchedProperties;
 
 @class Composer;
+@class Genre;
 @class MediaItem;
 
 
 @class UIImage;
-
 
 
 
@@ -59,16 +59,6 @@ extern const struct RecordFetchedProperties {
 
 
 //- (BOOL)validateCover:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) NSString* genre;
-
-
-
-//- (BOOL)validateGenre:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -115,6 +105,13 @@ extern const struct RecordFetchedProperties {
 
 
 
+@property (nonatomic, strong) Genre *genre;
+
+//- (BOOL)validateGenre:(id*)value_ error:(NSError**)error_;
+
+
+
+
 @property (nonatomic, strong) NSSet *relatedMedia;
 
 - (NSMutableSet*)relatedMediaSet;
@@ -154,12 +151,6 @@ extern const struct RecordFetchedProperties {
 
 
 
-- (NSString*)primitiveGenre;
-- (void)setPrimitiveGenre:(NSString*)value;
-
-
-
-
 - (NSString*)primitiveLyrics;
 - (void)setPrimitiveLyrics:(NSString*)value;
 
@@ -184,6 +175,11 @@ extern const struct RecordFetchedProperties {
 
 - (NSMutableSet*)primitiveComposer;
 - (void)setPrimitiveComposer:(NSMutableSet*)value;
+
+
+
+- (Genre*)primitiveGenre;
+- (void)setPrimitiveGenre:(Genre*)value;
 
 
 

@@ -83,6 +83,12 @@
 		30BEDDE517DD0CB6003D2C8E /* HPBaseResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BEDDE417DD0CB6003D2C8E /* HPBaseResponseObject.m */; };
 		30BEDDE917DD1A28003D2C8E /* HPEntityCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BEDDE817DD1A28003D2C8E /* HPEntityCreator.m */; };
 		30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C64A5A17D22E860059DF84 /* HPBaseViewController.m */; };
+		30D19B9118119C6F00BC9620 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9018119C6F00BC9620 /* Genre.m */; };
+		30D19B9418119C7E00BC9620 /* _Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9318119C7E00BC9620 /* _Genre.m */; };
+		30D19B9918119D8000BC9620 /* HPGenreAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9718119D8000BC9620 /* HPGenreAddViewController.m */; };
+		30D19B9A18119D8000BC9620 /* HPGenreAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D19B9818119D8000BC9620 /* HPGenreAddViewController.xib */; };
+		30D19B9E1811A03600BC9620 /* NSString+EmptyStringChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9D1811A03600BC9620 /* NSString+EmptyStringChecker.m */; };
+		30D19BA21811A35E00BC9620 /* UITextField+EmptyChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19BA11811A35E00BC9620 /* UITextField+EmptyChecker.m */; };
 		30FAAEE517C9618C00299126 /* HPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE117C9618C00299126 /* HPRequest.m */; };
 		30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEE417C9618C00299126 /* HPRequestFactory.m */; };
 		30FAAEED17C9619A00299126 /* HPDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FAAEEB17C9619A00299126 /* HPDefines.m */; };
@@ -204,6 +210,17 @@
 		30BEDDE817DD1A28003D2C8E /* HPEntityCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPEntityCreator.m; sourceTree = "<group>"; };
 		30C64A5917D22E860059DF84 /* HPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseViewController.h; sourceTree = "<group>"; };
 		30C64A5A17D22E860059DF84 /* HPBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseViewController.m; sourceTree = "<group>"; };
+		30D19B8F18119C6F00BC9620 /* Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Genre.h; sourceTree = "<group>"; };
+		30D19B9018119C6F00BC9620 /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
+		30D19B9218119C7E00BC9620 /* _Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Genre.h; sourceTree = "<group>"; };
+		30D19B9318119C7E00BC9620 /* _Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Genre.m; sourceTree = "<group>"; };
+		30D19B9618119D8000BC9620 /* HPGenreAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGenreAddViewController.h; sourceTree = "<group>"; };
+		30D19B9718119D8000BC9620 /* HPGenreAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGenreAddViewController.m; sourceTree = "<group>"; };
+		30D19B9818119D8000BC9620 /* HPGenreAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPGenreAddViewController.xib; sourceTree = "<group>"; };
+		30D19B9C1811A03600BC9620 /* NSString+EmptyStringChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EmptyStringChecker.h"; sourceTree = "<group>"; };
+		30D19B9D1811A03600BC9620 /* NSString+EmptyStringChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EmptyStringChecker.m"; sourceTree = "<group>"; };
+		30D19BA01811A35E00BC9620 /* UITextField+EmptyChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+EmptyChecker.h"; sourceTree = "<group>"; };
+		30D19BA11811A35E00BC9620 /* UITextField+EmptyChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+EmptyChecker.m"; sourceTree = "<group>"; };
 		30FAAEE017C9618C00299126 /* HPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequest.h; sourceTree = "<group>"; };
 		30FAAEE117C9618C00299126 /* HPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRequest.m; sourceTree = "<group>"; };
 		30FAAEE317C9618C00299126 /* HPRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRequestFactory.h; sourceTree = "<group>"; };
@@ -368,6 +385,8 @@
 				302CD0EC17C951C000561185 /* _Audio.h */,
 				302CD0ED17C951C000561185 /* _Audio.m */,
 				302CD0EE17C951C000561185 /* _Author.h */,
+				30D19B9218119C7E00BC9620 /* _Genre.h */,
+				30D19B9318119C7E00BC9620 /* _Genre.m */,
 				302CD0EF17C951C000561185 /* _Author.m */,
 				302CD0F017C951C000561185 /* _Band.h */,
 				302CD0F117C951C000561185 /* _Band.m */,
@@ -561,6 +580,8 @@
 				302CD0E217C951C000561185 /* Band.m */,
 				302CD0E317C951C000561185 /* Composer.h */,
 				302CD0E417C951C000561185 /* Composer.m */,
+				30D19B8F18119C6F00BC9620 /* Genre.h */,
+				30D19B9018119C6F00BC9620 /* Genre.m */,
 				302CD0E517C951C000561185 /* MediaItem.h */,
 				302CD0E617C951C000561185 /* MediaItem.m */,
 				302CD0E717C951C000561185 /* MediaLinks.h */,
@@ -625,6 +646,7 @@
 		307B48FE17EDC0E4005D03C4 /* StaffMaking */ = {
 			isa = PBXGroup;
 			children = (
+				30D19B9518119D6000BC9620 /* Genre */,
 				307B490517EDE102005D03C4 /* Song */,
 				307B48FF17EDC0E4005D03C4 /* Author */,
 			);
@@ -742,6 +764,34 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		30D19B9518119D6000BC9620 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				30D19B9618119D8000BC9620 /* HPGenreAddViewController.h */,
+				30D19B9718119D8000BC9620 /* HPGenreAddViewController.m */,
+				30D19B9818119D8000BC9620 /* HPGenreAddViewController.xib */,
+			);
+			path = Genre;
+			sourceTree = "<group>";
+		};
+		30D19B9B1811A00000BC9620 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				30D19B9C1811A03600BC9620 /* NSString+EmptyStringChecker.h */,
+				30D19B9D1811A03600BC9620 /* NSString+EmptyStringChecker.m */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		30D19B9F1811A34900BC9620 /* TextFieldEmptyCheck */ = {
+			isa = PBXGroup;
+			children = (
+				30D19BA01811A35E00BC9620 /* UITextField+EmptyChecker.h */,
+				30D19BA11811A35E00BC9620 /* UITextField+EmptyChecker.m */,
+			);
+			path = TextFieldEmptyCheck;
+			sourceTree = "<group>";
+		};
 		30FAAEDF17C9618C00299126 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +823,8 @@
 		30FD249A17D7E6DC006894A5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				30D19B9F1811A34900BC9620 /* TextFieldEmptyCheck */,
+				30D19B9B1811A00000BC9620 /* String */,
 				30FD249B17D7E70E006894A5 /* Dictionary+ProtectedVfK */,
 			);
 			path = Categories;
@@ -865,6 +917,7 @@
 				307B490417EDC10F005D03C4 /* HPAuthorViewController.xib in Resources */,
 				301454E717D268F500351CCF /* nouser_male.jpg in Resources */,
 				301454F217D277C800351CCF /* HPMainPageViewController.xib in Resources */,
+				30D19B9A18119D8000BC9620 /* HPGenreAddViewController.xib in Resources */,
 				30AEF32917DE66A00082B8CC /* HPSettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -934,25 +987,30 @@
 				30983E6217FF567400CC5946 /* HPAPIDefines.m in Sources */,
 				302CD10B17C951C000561185 /* MediaLinks.m in Sources */,
 				302CD10C17C951C000561185 /* Playlist.m in Sources */,
+				30D19BA21811A35E00BC9620 /* UITextField+EmptyChecker.m in Sources */,
 				302CD10D17C951C000561185 /* _Audio.m in Sources */,
 				302CD10E17C951C000561185 /* _Author.m in Sources */,
 				302CD10F17C951C000561185 /* _Band.m in Sources */,
 				307B495C17EE4770005D03C4 /* HPSimpleDataSource.m in Sources */,
 				302CD11017C951C000561185 /* _Composer.m in Sources */,
 				302CD11117C951C000561185 /* _MediaItem.m in Sources */,
+				30D19B9E1811A03600BC9620 /* NSString+EmptyStringChecker.m in Sources */,
 				302CD11217C951C000561185 /* _MediaLinks.m in Sources */,
 				302CD11317C951C000561185 /* _Playlist.m in Sources */,
 				302CD11417C951C000561185 /* _Record.m in Sources */,
 				30983E5F17FF565200CC5946 /* HPAPIKeys.m in Sources */,
+				30D19B9118119C6F00BC9620 /* Genre.m in Sources */,
 				302CD11517C951C000561185 /* _User.m in Sources */,
 				302CD11617C951C000561185 /* _Video.m in Sources */,
 				302CD11717C951C000561185 /* Record.m in Sources */,
 				302CD11817C951C000561185 /* User.m in Sources */,
+				30D19B9418119C7E00BC9620 /* _Genre.m in Sources */,
 				302CD11917C951C000561185 /* Video.m in Sources */,
 				30FAAEE517C9618C00299126 /* HPRequest.m in Sources */,
 				30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */,
 				307B490917EDE119005D03C4 /* HPAddSongViewController.m in Sources */,
 				30FAAEED17C9619A00299126 /* HPDefines.m in Sources */,
+				30D19B9918119D8000BC9620 /* HPGenreAddViewController.m in Sources */,
 				30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */,
 				301454C517D24EB900351CCF /* HPDataBaseHelper.m in Sources */,
 				301454C917D2503E00351CCF /* HPDatabase.m in Sources */,

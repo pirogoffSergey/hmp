@@ -156,18 +156,6 @@ const struct RequestMethods RequestMethods = {
     return [NSString stringWithFormat:@"%@/%@", APIGroups.files, subPath];
 }
 
-
-- (BOOL)isClearString:(NSString *)string
-{
-    NSCharacterSet *spacesSet = [NSCharacterSet whitespaceCharacterSet];
-    if(!string || [string isEqualToString:@""] || ([string stringByTrimmingCharactersInSet:spacesSet].length == 0)) {
-        return YES;
-    }
-    else {
-        return NO;
-    }
-}
-
 - (NSString *)encodeToValidURLString:(NSString *)string
 {
     return [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

@@ -37,4 +37,10 @@
 }
 
 
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    RESIGN_ALL;
+}
+
+
 @end

@@ -16,7 +16,7 @@
     [self checkIsAllObjectsAreTextFields];
     
     for (UITextField *tf in self.textFields) {
-        if (!tf.text.length) {
+        if (!tf.text || [tf.text isEmpty]) {
             _checkingResult = NO;
             _numberOfFirstInvalidField = [self.textFields indexOfObject:tf];
             return;
