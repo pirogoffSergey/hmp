@@ -10,7 +10,12 @@
 #import "HPPickerViewHandler.h"
 #import "SDSegmentedControl.h"
 #import "FDTakeController.h"
+#import "HPNavBarElementsProducer.h"
 
+#import "HPEntityCreator.h"
+#import "Record.h"
+#import "Genre.h"
+#import "Author.h"
 
 
 @interface HPAddSongViewController () <UIScrollViewDelegate, FDTakeDelegate>
@@ -20,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
+@property (nonatomic, assign) BOOL isCoverSet;
 
 @property (weak, nonatomic) IBOutlet UIView *titleViewContainer;
 @property (weak, nonatomic) IBOutlet UITextField *authorTextField;
@@ -30,6 +36,10 @@
 @property (nonatomic, strong) HPPickerViewHandler *pickerManagerAuthors;
 @property (nonatomic, strong) FDTakeController *takePhotoController;
 
+
+@property (nonatomic, strong) Genre *selectedGenre;
+@property (nonatomic, strong) Author *selectedAuthor;
+
 @end
 
 
@@ -38,20 +48,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setuper];
+    [self setupAppearance];
 }
 
 
 #pragma mark -
 #pragma mark Setup
 
-- (void)setuper
+- (void)setupAppearance
 {
     [self setupAuthorsPicker];
     [self setupGenrePicker];
     
     self.scrollView.contentSize = CGSizeMake(320, 600);
     [self.titleViewContainer addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)]];
+    self.navigationItem.rightBarButtonItem = [HPNavBarElementsProducer doneButtonWithTarget:self action:@selector(doneButtonPressed:)];
 }
 
 - (void)setupAuthorsPicker
@@ -66,8 +77,8 @@
     
     __weak HPAddSongViewController *weakSelf = self;
     self.pickerManagerAuthors.itemSelectedBlock = ^(id selectedItem, NSString *selectedString) {
-        NSLog(@"selected %@", selectedItem);
         weakSelf.authorTextField.text = selectedString;
+        weakSelf.selectedAuthor = selectedItem;
     };
 }
 
@@ -83,8 +94,8 @@
     
     __weak HPAddSongViewController *weakSelf = self;
     self.pickerManagerGenres.itemSelectedBlock = ^(id selectedItem, NSString *selectedString) {
-        NSLog(@"selected %@", selectedItem);
         weakSelf.genreTextField.text = selectedString;
+        weakSelf.selectedGenre = selectedItem;
     };
 }
 
@@ -107,6 +118,13 @@
     [self.takePhotoController takePhotoOrChooseFromLibrary];
 }
 
+- (void)doneButtonPressed:(id)sender
+{
+    if([self createSongWithCurrentData]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 
 #pragma mark -
 #pragma mark FDTakeDelegate
@@ -115,6 +133,7 @@
 {
     self.pictureButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.pictureButton setImage:photo forState:UIControlStateNormal];
+    self.isCoverSet = YES;
 }
 
 
@@ -124,6 +143,30 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     RESIGN_ALL;
+}
+
+
+#pragma mark -
+#pragma mark Helpers
+
+- (Record *)createSongWithCurrentData
+{
+    if([self.titleTextField isTextFieldEmpty]) {
+        [HPAlert showErroMessage:@"Please, input at least Title"];
+        return nil;
+    }
+    
+    HPEntityCreator *entityCreator = [HPEntityCreator new];
+    entityCreator.entityClass = [Record class];
+    [entityCreator reach];
+    
+    Record *newRecord = entityCreator.createdEntityObject;
+    newRecord.title = self.titleTextField.text;
+    newRecord.cover = (self.isCoverSet) ? self.pictureButton.imageView.image : nil;
+    newRecord.genre = self.selectedGenre;
+    newRecord.composer = (self.selectedAuthor) ? [NSSet setWithObject:self.selectedAuthor]: nil;
+    [HPDatabase saveDataBase];
+    return newRecord;
 }
 
 @end

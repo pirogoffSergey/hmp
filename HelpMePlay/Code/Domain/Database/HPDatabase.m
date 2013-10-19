@@ -13,6 +13,7 @@
 
 #import "Author.h"
 #import "Genre.h"
+#import "Record.h"
 
 
 @implementation HPDatabase
@@ -80,6 +81,14 @@
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:ComposerAttributes.name ascending:YES]];
     return [[HPDataBaseHelper sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
 }
+
++ (NSArray *)allSongs
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[Record entityName]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:RecordAttributes.title ascending:YES]];
+    return [[HPDataBaseHelper sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+}
+
 
 + (NSArray *)allGenres
 {

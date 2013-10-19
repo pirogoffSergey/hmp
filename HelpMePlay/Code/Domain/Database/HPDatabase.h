@@ -19,6 +19,7 @@
 + (User *)createUserWithDictionary:(NSDictionary *)dict;
 
 + (NSArray *)allAuthors;
++ (NSArray *)allSongs;
 + (NSArray *)allGenres;
 + (NSArray *)genreWithName:(NSString *)name;
 

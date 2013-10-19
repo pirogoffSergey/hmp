@@ -8,7 +8,7 @@ extern const struct RecordAttributes {
 	__unsafe_unretained NSString *accords;
 	__unsafe_unretained NSString *cover;
 	__unsafe_unretained NSString *lyrics;
-	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *title;
 	__unsafe_unretained NSString *uid;
 } RecordAttributes;
 
@@ -74,11 +74,11 @@ extern const struct RecordFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) NSString* title;
 
 
 
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -157,8 +157,8 @@ extern const struct RecordFetchedProperties {
 
 
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (NSString*)primitiveTitle;
+- (void)setPrimitiveTitle:(NSString*)value;
 
 
 

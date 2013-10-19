@@ -78,11 +78,7 @@
 
 - (IBAction)allSongsTapped:(id)sender
 {
-    HPBaseListViewController *list = [HPBaseListViewController new];
-    list.addActionBlock = ^(UIViewController *controller){
-        [controller.navigationController pushViewController:[HPAddSongViewController new] animated:YES];
-    };
-    [self.navigationController pushViewController:list animated:YES];
+    [self.navigationController pushViewController:[self songsList] animated:YES];
 }
 
 
@@ -115,6 +111,22 @@
     list.dataSource = dataSource;
     return list;
 }
+
+- (HPBaseListViewController *)songsList
+{
+    HPBaseListViewController *list = [HPBaseListViewController new];
+    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
+    dataSource.reloadBlock = ^{
+        return [HPDatabase allSongs];
+    };
+    list.dataSource = dataSource;
+    
+    list.addActionBlock = ^(UIViewController *controller){
+        [controller.navigationController pushViewController:[HPAddSongViewController new] animated:YES];
+    };
+    return list;
+}
+
 
 @end
 

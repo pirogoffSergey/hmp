@@ -7,7 +7,7 @@ const struct RecordAttributes RecordAttributes = {
 	.accords = @"accords",
 	.cover = @"cover",
 	.lyrics = @"lyrics",
-	.name = @"name",
+	.title = @"title",
 	.uid = @"uid",
 };
 
@@ -79,7 +79,7 @@ const struct RecordFetchedProperties RecordFetchedProperties = {
 
 
 
-@dynamic name;
+@dynamic title;
 
 
 
