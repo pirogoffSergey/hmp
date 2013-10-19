@@ -11,7 +11,7 @@
 @interface HPSimpleDataSource : HPBaseDataSource
 
 @property (nonatomic, strong) NSArray *records;
-
+@property (nonatomic, assign) UITableViewCellSelectionStyle cellSelectionStyle;
 @property (nonatomic, copy) NSArray * (^reloadBlock)();
 
 @end

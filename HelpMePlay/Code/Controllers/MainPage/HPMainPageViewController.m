@@ -105,6 +105,7 @@
 {
     HPGenreListViewController *list = [HPGenreListViewController new];
     HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
+    dataSource.cellSelectionStyle = UITableViewCellSelectionStyleNone;
     dataSource.reloadBlock = ^{
         return [HPDatabase allGenres];
     };

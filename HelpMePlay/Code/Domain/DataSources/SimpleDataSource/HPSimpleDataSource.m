@@ -10,6 +10,15 @@
 
 @implementation HPSimpleDataSource
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.cellSelectionStyle = UITableViewCellSelectionStyleBlue;
+    }
+    return self;
+}
+
 - (NSUInteger)numberOfRowsInSection:(NSInteger)section
 {
     return (self.records) ? self.records.count : 0;
@@ -30,6 +39,7 @@
         text = [record performSelector:@selector(name) withObject:nil];
     }
     cell.textLabel.text = text;
+    cell.selectionStyle = self.cellSelectionStyle;
 }
 
 - (void)reload
@@ -47,5 +57,27 @@
         [self.delegate didSelectRowAtIndexPath:indexPath withItem:self.records[indexPath.row]];
     }
 }
+
+
+
+#pragma mark -
+#pragma mark Right Letters Support
+
+//- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+//{
+//    return index;
+//}
+//
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+//{
+//    NSMutableArray *letters = [NSMutableArray array];
+//    NSArray *keys = @[@"a", @"b", @"c", @"f",];
+//    
+//    for(NSString *s in keys) {
+//        [letters addObject:s.uppercaseString];
+//    }
+//    return letters;
+//}
+
 
 @end
