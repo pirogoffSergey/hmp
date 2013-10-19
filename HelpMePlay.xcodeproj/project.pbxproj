@@ -85,8 +85,6 @@
 		30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C64A5A17D22E860059DF84 /* HPBaseViewController.m */; };
 		30D19B9118119C6F00BC9620 /* Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9018119C6F00BC9620 /* Genre.m */; };
 		30D19B9418119C7E00BC9620 /* _Genre.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9318119C7E00BC9620 /* _Genre.m */; };
-		30D19B9918119D8000BC9620 /* HPGenreAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9718119D8000BC9620 /* HPGenreAddViewController.m */; };
-		30D19B9A18119D8000BC9620 /* HPGenreAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D19B9818119D8000BC9620 /* HPGenreAddViewController.xib */; };
 		30D19B9E1811A03600BC9620 /* NSString+EmptyStringChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19B9D1811A03600BC9620 /* NSString+EmptyStringChecker.m */; };
 		30D19BA21811A35E00BC9620 /* UITextField+EmptyChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19BA11811A35E00BC9620 /* UITextField+EmptyChecker.m */; };
 		30D19BA71811A95800BC9620 /* HPPickerViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D19BA61811A95800BC9620 /* HPPickerViewHandler.m */; };
@@ -220,9 +218,6 @@
 		30D19B9018119C6F00BC9620 /* Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Genre.m; sourceTree = "<group>"; };
 		30D19B9218119C7E00BC9620 /* _Genre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Genre.h; sourceTree = "<group>"; };
 		30D19B9318119C7E00BC9620 /* _Genre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Genre.m; sourceTree = "<group>"; };
-		30D19B9618119D8000BC9620 /* HPGenreAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGenreAddViewController.h; sourceTree = "<group>"; };
-		30D19B9718119D8000BC9620 /* HPGenreAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGenreAddViewController.m; sourceTree = "<group>"; };
-		30D19B9818119D8000BC9620 /* HPGenreAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HPGenreAddViewController.xib; sourceTree = "<group>"; };
 		30D19B9C1811A03600BC9620 /* NSString+EmptyStringChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EmptyStringChecker.h"; sourceTree = "<group>"; };
 		30D19B9D1811A03600BC9620 /* NSString+EmptyStringChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EmptyStringChecker.m"; sourceTree = "<group>"; };
 		30D19BA01811A35E00BC9620 /* UITextField+EmptyChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+EmptyChecker.h"; sourceTree = "<group>"; };
@@ -665,7 +660,6 @@
 		307B48FE17EDC0E4005D03C4 /* StaffMaking */ = {
 			isa = PBXGroup;
 			children = (
-				30D19B9518119D6000BC9620 /* Genre */,
 				307B490517EDE102005D03C4 /* Song */,
 				307B48FF17EDC0E4005D03C4 /* Author */,
 			);
@@ -781,16 +775,6 @@
 				301454D617D2661B00351CCF /* SignUp */,
 			);
 			path = Authentication;
-			sourceTree = "<group>";
-		};
-		30D19B9518119D6000BC9620 /* Genre */ = {
-			isa = PBXGroup;
-			children = (
-				30D19B9618119D8000BC9620 /* HPGenreAddViewController.h */,
-				30D19B9718119D8000BC9620 /* HPGenreAddViewController.m */,
-				30D19B9818119D8000BC9620 /* HPGenreAddViewController.xib */,
-			);
-			path = Genre;
 			sourceTree = "<group>";
 		};
 		30D19B9B1811A00000BC9620 /* String */ = {
@@ -1007,7 +991,6 @@
 				307B490417EDC10F005D03C4 /* HPAuthorViewController.xib in Resources */,
 				301454E717D268F500351CCF /* nouser_male.jpg in Resources */,
 				301454F217D277C800351CCF /* HPMainPageViewController.xib in Resources */,
-				30D19B9A18119D8000BC9620 /* HPGenreAddViewController.xib in Resources */,
 				30AEF32917DE66A00082B8CC /* HPSettingsViewController.xib in Resources */,
 				30D19BB41811D02200BC9620 /* searchViewBackground@2x.png in Resources */,
 			);
@@ -1103,7 +1086,6 @@
 				30FAAEE617C9618C00299126 /* HPRequestFactory.m in Sources */,
 				307B490917EDE119005D03C4 /* HPAddSongViewController.m in Sources */,
 				30FAAEED17C9619A00299126 /* HPDefines.m in Sources */,
-				30D19B9918119D8000BC9620 /* HPGenreAddViewController.m in Sources */,
 				30C64A5B17D22E860059DF84 /* HPBaseViewController.m in Sources */,
 				301454C517D24EB900351CCF /* HPDataBaseHelper.m in Sources */,
 				301454C917D2503E00351CCF /* HPDatabase.m in Sources */,

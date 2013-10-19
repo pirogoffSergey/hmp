@@ -45,7 +45,7 @@ static CGFloat cSectionWidth = 300;
     id recordToPresent = self.records[row];
     
     if(self.itemSelectedBlock) {
-        self.itemSelectedBlock(recordToPresent);
+        self.itemSelectedBlock(recordToPresent, [self pickerView:self.picker titleForRow:row forComponent:component]);
     }
 }
 

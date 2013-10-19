@@ -14,6 +14,6 @@
 @property (nonatomic, weak) UIPickerView *picker;
 @property (nonatomic, strong) NSArray *records;
 
-@property (nonatomic, copy) void (^itemSelectedBlock)(id selectedRecord);
+@property (nonatomic, copy) void (^itemSelectedBlock)(id selectedRecord, NSString *selectedString);
 
 @end

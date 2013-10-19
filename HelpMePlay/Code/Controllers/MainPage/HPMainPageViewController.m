@@ -15,7 +15,6 @@
 
 #import "HPAuthorViewController.h"
 #import "HPAddSongViewController.h"
-#import "HPGenreAddViewController.h"
 #import "HPGenreListViewController.h"
 
 
