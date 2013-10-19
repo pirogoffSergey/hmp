@@ -12,11 +12,14 @@
 
 + (HPAddGenreView *)createView;
 
-- (BOOL)isVisible;
-
 - (void)show;
 - (void)hide;
 - (void)showWithAnimationBlock:(void(^)(void))animationBlock;
 - (void)hideWithAnimationBlock:(void(^)(void))animationBlock;
+
+- (BOOL)isVisible;
+- (void)clearTextField;
+
+@property (nonatomic, copy) void (^addActionBlock)(NSString *inputedValue);
 
 @end

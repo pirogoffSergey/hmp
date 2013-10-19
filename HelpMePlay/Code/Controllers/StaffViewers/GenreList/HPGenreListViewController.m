@@ -9,6 +9,9 @@
 #import "HPGenreListViewController.h"
 #import "HPAddGenreView.h"
 
+#import "Genre.h"
+#import "HPEntityCreator.h"
+
 
 @interface HPGenreListViewController ()
 
@@ -36,9 +39,25 @@
     self.addGenreView = [HPAddGenreView createView];
     [self.addGenreView hide];
     [self.view addSubview:self.addGenreView];
+    
+    __weak HPGenreListViewController *weakSelf = self;
+    self.addGenreView.addActionBlock = ^(NSString *nameString) {
+        
+        if(!nameString || [nameString isEmpty]) {
+            [HPAlert showErroMessage:@"Please, input name of genre"];
+            return;
+        }
+        if([weakSelf isAlreadyHaveGenreWithName:nameString]) {
+            [HPAlert showErroMessage:@"Genre \"%@\" is already exists", nameString];
+            return;
+        }
+        
+        [weakSelf createNewGenreWithName:nameString];
+        [HPAlert showSuccesMessage:@"Done"];
+        [weakSelf.dataSource reload];
+        RESIGN_ALL;
+    };
 }
-
-
 
 
 #pragma mark -
@@ -57,7 +76,6 @@
         }];
 
     } else {
-        [((UILabel *)self.navigationItem.titleView) setText:self.title];
         UIEdgeInsets contentInset = self.tableView.contentInset;
         contentInset.top = 0;
 
@@ -65,37 +83,29 @@
             self.tableView.contentInset = contentInset;
         }];
     }
-
-    
 }
 
 
 
+#pragma mark -
+#pragma mark Helpers
 
-- (void)pressedAdd
+- (Genre *)isAlreadyHaveGenreWithName:(NSString *)name
 {
-    //    [sender setSelected:!sender.isSelected];
-    //    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
-    
-    //    if (!self.searchView.isVisible) {
-    //        [((UILabel *)self.navigationItem.titleView) setText:@"Search"];
-    //        UIEdgeInsets contentInset = self.tableView.contentInset;
-    //        contentInset.top = self.searchView.frame.size.height;
-    //
-    //        [self.searchView show:^{
-    //            self.tableView.contentInset = contentInset;
-    //        }];
-    //
-    //    } else {
-    //        [((UILabel *)self.navigationItem.titleView) setText:self.title];
-    //        UIEdgeInsets contentInset = self.tableView.contentInset;
-    //        contentInset.top = 0;
-    //
-    //        [self setTableViewContentInset:contentInset];
-    //        [self.searchView hide];
-    //    }
-    
+    NSArray *fetchResults = [HPDatabase genreWithName:name];
+    return [fetchResults lastObject];
 }
 
+- (Genre *)createNewGenreWithName:(NSString *)name
+{
+    HPEntityCreator *entityCreator = [HPEntityCreator new];
+    entityCreator.entityClass = [Genre class];
+    [entityCreator reach];
+    
+    Genre *newGenre = entityCreator.createdEntityObject;
+    newGenre.name = name;
+    [HPDatabase saveDataBase];
+    return newGenre;
+}
 
 @end

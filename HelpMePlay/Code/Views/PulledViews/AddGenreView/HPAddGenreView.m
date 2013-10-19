@@ -27,6 +27,9 @@ static CGFloat const cAnimationDuration = 0.33;
 }
 
 
+#pragma mark -
+#pragma mark Object Methods
+
 - (void)awakeFromNib
 {
     [self setup];
@@ -43,7 +46,9 @@ static CGFloat const cAnimationDuration = 0.33;
 
 - (IBAction)addButtonPressed:(id)sender
 {
-    NSLog(@"add");
+    if(self.addActionBlock) {
+        self.addActionBlock(self.nameTextField.text);
+    }
 }
 
 - (void)didTap:(UITapGestureRecognizer *)gr
@@ -63,13 +68,11 @@ static CGFloat const cAnimationDuration = 0.33;
 - (void)hide
 {
     [self setOriginY:-self.frame.size.height withAnimationdBlock:nil animated:NO];
-    NSLog(@"frame = %@", [NSValue valueWithCGRect: self.frame]);
 }
 
 - (void)showWithAnimationBlock:(void(^)(void))animationBlock
 {
     [self setOriginY:0 withAnimationdBlock:animationBlock animated:YES];
-    NSLog(@"frame show = %@", [NSValue valueWithCGRect: self.frame]);
 }
 
 - (void)hideWithAnimationBlock:(void(^)(void))animationBlock;
@@ -84,6 +87,11 @@ static CGFloat const cAnimationDuration = 0.33;
     } else {
         return NO;
     }
+}
+
+- (void)clearTextField
+{
+    self.nameTextField.text = @"";
 }
 
 
@@ -103,7 +111,6 @@ static CGFloat const cAnimationDuration = 0.33;
         self.frame = frame;
     }];
 }
-
 
 
 @end
