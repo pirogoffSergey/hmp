@@ -9,7 +9,7 @@
 #import "HPAPIDefines.h"
 
 const struct APIUrls APIUrls = {
-    .baseURL = @"http://viodev4p.bget.ru", // viodev.bget.ru
+    .baseURL = @"http://viodevcw.bget.ru", // viodev.bget.ru    viodev4p.bget.ru
 };
 
 
