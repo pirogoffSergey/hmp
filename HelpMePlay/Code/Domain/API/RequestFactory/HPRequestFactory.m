@@ -34,13 +34,6 @@ const struct RequestMethods RequestMethods = {
 
 - (HPRequest *)createUserWithName:(NSString *)name login:(NSString *)login password:(NSString *)password
 {
-//    HPRequest *request = [[HPRequest alloc] initWithURL:[self pathForUserMethods:APICommonMethods.set]];
-//    request.HTTPMethod = RequestMethods.post;
-//    [request addBody: @{
-//         @"name" :name,
-//         @"login":login,
-//         @"password":password
-//     }];
     return [self changeUserWithName:name login:login password:password token:nil];
 }
 
@@ -100,8 +93,7 @@ const struct RequestMethods RequestMethods = {
     return request;
 }
 
-
-// --------------
+#pragma mark Author
 
 - (HPRequest *)getAuthorsWithToken:(NSString *)token authorID:(NSNumber *)authID
 {
@@ -115,9 +107,14 @@ const struct RequestMethods RequestMethods = {
     return request;
 }
 
+#pragma mark Genres
 
+- (HPRequest *)getGenresList
+{
+    return nil;
+}
 
-// --------------
+#pragma mark Pics
 
 - (HPRequest *)getPicWithID:(NSNumber *)picID token:(NSString *)token
 {

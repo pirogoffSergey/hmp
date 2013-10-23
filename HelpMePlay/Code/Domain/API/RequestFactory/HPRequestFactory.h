@@ -36,4 +36,7 @@ extern const struct RequestMethods {
 - (HPRequest *)getPicWithID:(NSNumber *)picID token:(NSString *)token;
 - (HPRequest *)sendPic:(UIImage *)pic withToken:(NSString *)token;
 
+//genres
+- (HPRequest *)getGenresList;
+
 @end
