@@ -12,8 +12,11 @@
 #import "HPBaseListViewController.h"
 #import "HPGenreListViewController.h"
 #import "HPNavBarElementsProducer.h"
-#import "HPToLoginTransaction.h"
 #import "HPSimpleDataSource.h"
+
+#import "HPToLoginTransaction.h"
+#import "HPToAuthorsList.h"
+#import "HPToGenresList.h"
 
 
 @interface HPMainPageViewController ()
@@ -57,7 +60,9 @@
 
 - (IBAction)authorsTapped:(id)sender
 {
-    [self.navigationController pushViewController:[self authorsList] animated:YES];
+    HPToAuthorsList *transaction = [HPToAuthorsList new];
+    transaction.navigationController = self.navigationController;
+    [transaction execute];
 }
 
 - (IBAction)playlistsTapped:(id)sender
@@ -67,7 +72,9 @@
 
 - (IBAction)genresTapped:(id)sender
 {
-    [self.navigationController pushViewController:[self genresList] animated:YES];
+    HPToGenresList *transaction = [HPToGenresList new];
+    transaction.navigationController = self.navigationController;
+    [transaction execute];
 }
 
 - (IBAction)allSongsTapped:(id)sender
@@ -78,34 +85,6 @@
 
 #pragma mark -
 #pragma mark Helpers
-
-- (HPBaseListViewController *)authorsList
-{
-    HPBaseListViewController *list = [HPBaseListViewController new];
-    list.title = @"authors";
-    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
-    dataSource.reloadBlock = ^{
-        return [HPDatabase allAuthors];
-    };
-    list.dataSource = dataSource;
-    
-    list.addActionBlock = ^(UIViewController *controller){
-        [controller.navigationController pushViewController:[HPAuthorViewController new] animated:YES];
-    };
-    return list;
-}
-
-- (HPBaseListViewController *)genresList
-{
-    HPGenreListViewController *list = [HPGenreListViewController new];
-    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
-    dataSource.cellSelectionStyle = UITableViewCellSelectionStyleNone;
-    dataSource.reloadBlock = ^{
-        return [HPDatabase allGenres];
-    };
-    list.dataSource = dataSource;
-    return list;
-}
 
 - (HPBaseListViewController *)songsList
 {

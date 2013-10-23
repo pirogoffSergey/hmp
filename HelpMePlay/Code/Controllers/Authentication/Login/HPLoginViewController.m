@@ -9,9 +9,9 @@
 #import "HPLoginViewController.h"
 #import "HPRequestFactory.h"
 #import "HPNoEmptyFieldsValidatorObjective.h"
-#import "HPSignupViewController.h"
 #import "HPBaseMapper.h"
 #import "HPNavBarElementsProducer.h"
+#import "HPToSignupTransaction.h"
 
 
 @interface HPLoginViewController () <UITextFieldDelegate>
@@ -53,7 +53,9 @@
 
 - (IBAction)signUpButtonPressed:(id)sender
 {
-    [self.navigationController pushViewController:[HPSignupViewController new] animated:YES];
+    HPToSignupTransaction *transaction = [HPToSignupTransaction new];
+    transaction.navigationController = self.navigationController;
+    [transaction execute];
 }
 
 - (void)closeButtonPressed:(id)sender
@@ -109,7 +111,7 @@
         NSLog(@"token = %@", currentUser.token);
         
         NSString *userName = (currentUser.name) ? currentUser.name : currentUser.login;
-        [HPAlert showSuccesMessage:[NSString stringWithFormat:@"Hello, %@", userName]];
+        [HPAlert showSuccesMessage:@"Hello, %@", userName];
     };
     
     return request;

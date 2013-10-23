@@ -36,6 +36,10 @@
 		301454F617D284CB00351CCF /* HPBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454F517D284CB00351CCF /* HPBaseDataSource.m */; };
 		301454FA17D28B1C00351CCF /* HPBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301454F917D28B1C00351CCF /* HPBaseListViewController.m */; };
 		301AA4D61817A8C300C50E12 /* HPToLoginTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA4D51817A8C300C50E12 /* HPToLoginTransaction.m */; };
+		301AA4DA1817AC8E00C50E12 /* HPToSignupTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA4D91817AC8E00C50E12 /* HPToSignupTransaction.m */; };
+		301AA4DE1817AE1000C50E12 /* HPBaseTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA4DD1817AE1000C50E12 /* HPBaseTransaction.m */; };
+		301AA4E31817B4E400C50E12 /* HPToAuthorsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA4E21817B4E400C50E12 /* HPToAuthorsList.m */; };
+		301AA4E71817B68A00C50E12 /* HPToGenresList.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA4E61817B68A00C50E12 /* HPToGenresList.m */; };
 		302CD0D517C9069700561185 /* HelpMePlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0D317C9069700561185 /* HelpMePlay.xcdatamodeld */; };
 		302CD10617C951C000561185 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0DE17C951C000561185 /* Audio.m */; };
 		302CD10717C951C000561185 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 302CD0E017C951C000561185 /* Author.m */; };
@@ -133,6 +137,14 @@
 		301454F917D28B1C00351CCF /* HPBaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseListViewController.m; sourceTree = "<group>"; };
 		301AA4D41817A8C300C50E12 /* HPToLoginTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPToLoginTransaction.h; sourceTree = "<group>"; };
 		301AA4D51817A8C300C50E12 /* HPToLoginTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPToLoginTransaction.m; sourceTree = "<group>"; };
+		301AA4D81817AC8E00C50E12 /* HPToSignupTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPToSignupTransaction.h; sourceTree = "<group>"; };
+		301AA4D91817AC8E00C50E12 /* HPToSignupTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPToSignupTransaction.m; sourceTree = "<group>"; };
+		301AA4DC1817AE1000C50E12 /* HPBaseTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPBaseTransaction.h; sourceTree = "<group>"; };
+		301AA4DD1817AE1000C50E12 /* HPBaseTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPBaseTransaction.m; sourceTree = "<group>"; };
+		301AA4E11817B4E400C50E12 /* HPToAuthorsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPToAuthorsList.h; sourceTree = "<group>"; };
+		301AA4E21817B4E400C50E12 /* HPToAuthorsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPToAuthorsList.m; sourceTree = "<group>"; };
+		301AA4E51817B68A00C50E12 /* HPToGenresList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPToGenresList.h; sourceTree = "<group>"; };
+		301AA4E61817B68A00C50E12 /* HPToGenresList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPToGenresList.m; sourceTree = "<group>"; };
 		302CD0D417C9069700561185 /* HelpMePlay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelpMePlay.xcdatamodel; sourceTree = "<group>"; };
 		302CD0DD17C951C000561185 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		302CD0DE17C951C000561185 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Audio.m; sourceTree = "<group>"; };
@@ -397,6 +409,8 @@
 			isa = PBXGroup;
 			children = (
 				301AA4D21817A8A900C50E12 /* Auth */,
+				301AA4DB1817ADCA00C50E12 /* Base */,
+				301AA4DF1817B45900C50E12 /* FromHomeScreen */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -405,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				301AA4D31817A8A900C50E12 /* Login */,
+				301AA4D71817AC4400C50E12 /* Signup */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -416,6 +431,51 @@
 				301AA4D51817A8C300C50E12 /* HPToLoginTransaction.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		301AA4D71817AC4400C50E12 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				301AA4D81817AC8E00C50E12 /* HPToSignupTransaction.h */,
+				301AA4D91817AC8E00C50E12 /* HPToSignupTransaction.m */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		301AA4DB1817ADCA00C50E12 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				301AA4DC1817AE1000C50E12 /* HPBaseTransaction.h */,
+				301AA4DD1817AE1000C50E12 /* HPBaseTransaction.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		301AA4DF1817B45900C50E12 /* FromHomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				301AA4E41817B67200C50E12 /* Genres */,
+				301AA4E01817B4C100C50E12 /* Authors */,
+			);
+			path = FromHomeScreen;
+			sourceTree = "<group>";
+		};
+		301AA4E01817B4C100C50E12 /* Authors */ = {
+			isa = PBXGroup;
+			children = (
+				301AA4E11817B4E400C50E12 /* HPToAuthorsList.h */,
+				301AA4E21817B4E400C50E12 /* HPToAuthorsList.m */,
+			);
+			path = Authors;
+			sourceTree = "<group>";
+		};
+		301AA4E41817B67200C50E12 /* Genres */ = {
+			isa = PBXGroup;
+			children = (
+				301AA4E51817B68A00C50E12 /* HPToGenresList.h */,
+				301AA4E61817B68A00C50E12 /* HPToGenresList.m */,
+			);
+			path = Genres;
 			sourceTree = "<group>";
 		};
 		302CD0EB17C951C000561185 /* RawModels */ = {
@@ -1100,6 +1160,7 @@
 				302CD11517C951C000561185 /* _User.m in Sources */,
 				302CD11617C951C000561185 /* _Video.m in Sources */,
 				302CD11717C951C000561185 /* Record.m in Sources */,
+				301AA4DA1817AC8E00C50E12 /* HPToSignupTransaction.m in Sources */,
 				302CD11817C951C000561185 /* User.m in Sources */,
 				30D19B9418119C7E00BC9620 /* _Genre.m in Sources */,
 				302CD11917C951C000561185 /* Video.m in Sources */,
@@ -1118,13 +1179,16 @@
 				301454F117D277C800351CCF /* HPMainPageViewController.m in Sources */,
 				301454F617D284CB00351CCF /* HPBaseDataSource.m in Sources */,
 				301454FA17D28B1C00351CCF /* HPBaseListViewController.m in Sources */,
+				301AA4E31817B4E400C50E12 /* HPToAuthorsList.m in Sources */,
 				30FD249E17D7E730006894A5 /* NSDictionary+ProtectedValueForKey.m in Sources */,
 				30FD24A317D7E7D4006894A5 /* HPBaseMapper.m in Sources */,
 				30BEDDE517DD0CB6003D2C8E /* HPBaseResponseObject.m in Sources */,
 				30D19BA71811A95800BC9620 /* HPPickerViewHandler.m in Sources */,
 				30BEDDE917DD1A28003D2C8E /* HPEntityCreator.m in Sources */,
 				30AEF32817DE66A00082B8CC /* HPSettingsViewController.m in Sources */,
+				301AA4DE1817AE1000C50E12 /* HPBaseTransaction.m in Sources */,
 				30A1AB7417E10A59006383A6 /* HPAlert.m in Sources */,
+				301AA4E71817B68A00C50E12 /* HPToGenresList.m in Sources */,
 				30A1AB7817E10DA5006383A6 /* HPNavBarElementsProducer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
