@@ -17,6 +17,7 @@
 #import "HPToLoginTransaction.h"
 #import "HPToAuthorsList.h"
 #import "HPToGenresList.h"
+#import "HPToSongsList.h"
 
 
 @interface HPMainPageViewController ()
@@ -79,28 +80,14 @@
 
 - (IBAction)allSongsTapped:(id)sender
 {
-    [self.navigationController pushViewController:[self songsList] animated:YES];
+    HPToSongsList *transaction = [HPToSongsList new];
+    transaction.navigationController = self.navigationController;
+    [transaction execute];
 }
 
 
 #pragma mark -
 #pragma mark Helpers
-
-- (HPBaseListViewController *)songsList
-{
-    HPBaseListViewController *list = [HPBaseListViewController new];
-    HPSimpleDataSource *dataSource = [HPSimpleDataSource new];
-    dataSource.reloadBlock = ^{
-        return [HPDatabase allSongs];
-    };
-    list.dataSource = dataSource;
-    
-    list.addActionBlock = ^(UIViewController *controller){
-        [controller.navigationController pushViewController:[HPAddSongViewController new] animated:YES];
-    };
-    return list;
-}
-
 
 @end
 
