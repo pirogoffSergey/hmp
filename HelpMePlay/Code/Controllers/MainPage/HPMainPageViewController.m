@@ -7,15 +7,13 @@
 //
 
 #import "HPMainPageViewController.h"
-#import "HPSettingsViewController.h"
-#import "HPLoginViewController.h"
-#import "HPNavBarElementsProducer.h"
-#import "HPBaseListViewController.h"
-#import "HPSimpleDataSource.h"
-
 #import "HPAuthorViewController.h"
 #import "HPAddSongViewController.h"
+#import "HPBaseListViewController.h"
 #import "HPGenreListViewController.h"
+#import "HPNavBarElementsProducer.h"
+#import "HPToLoginTransaction.h"
+#import "HPSimpleDataSource.h"
 
 
 @interface HPMainPageViewController ()
@@ -51,13 +49,9 @@
 
 -(void)settingsPressed:(id)sender
 {
-    UIViewController *controllerToPush = nil;
-    
-    User *user = [HPDatabase currentUser];
-    controllerToPush = (user && [user isLogged]) ? [HPSettingsViewController new] : [HPLoginViewController new];
-    
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controllerToPush];
-    [self presentViewController:nav animated:YES completion:nil];
+    HPToLoginTransaction *transaction = [HPToLoginTransaction new];
+    transaction.parentController = self;
+    [transaction execute];
 }
 
 
